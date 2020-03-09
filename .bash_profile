@@ -2,6 +2,8 @@ export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/Library/Python/3.7/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 
 #export PS1="[\[\e[1;37m\]\h:\[\e[m\]\W]\$ "
 #>> [ip-172-31-41-207:~]$ 
@@ -23,4 +25,3 @@ PS1="\[\e[1;34m\][\h:\W]\[\e[m\]\$ "
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
 
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
-
