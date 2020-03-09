@@ -43,17 +43,18 @@ alias hg='history | grep'
 
 alias gs='git status' # `git status`の確認 
 alias gd='git diff' # `git diff`の確認
-alias gc='git commit' # commitする
-alias gca='git commit --amend' #　前のコミットの編集
+#alias gc='git commit' # commitする
+#alias gca='git commit --amend' #　前のコミットの編集
 alias glo='git log --oneline' # コミットログを各一行で読む
 
 alias g='git'
 alias ga='git add'
 alias gd='git diff'
 alias gs='git status'
-alias gp='git push'
+alias gpl='git pull'
+alias gps='git push'
 alias gb='git branch'
-alias gc='git checkout'
+alias gco='git checkout'
 alias gf='git fetch'
 alias gcm='git commit'
 alias gcb='git checkout -b'

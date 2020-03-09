@@ -16,8 +16,15 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 #>> [12:50] ec2-user@ip-172-31-41-207 : ~/expose_attackers_location
 #>> $ 
 
+function __command_rprompt() {
+    local rprompt=$(date "+%H:%M:%S")
+    local num=$(($COLUMNS - ${#rprompt} - 2))
+    printf "%${num}s$rprompt\r" ''
+}
+PROMPT_COMMAND=__command_rprompt
 
 PS1="\[\e[1;34m\][\h:\W]\[\e[m\]\$ "
+
 
 
 [ -f ~/.bashrc ] && . ~/.bashrc
