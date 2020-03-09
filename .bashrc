@@ -29,6 +29,7 @@ alias lss='less'
 alias less='less -R'
 
 alias t='tree -C'
+alias ta='tree -Ca'
 alias tree='tree -N'
 alias op='open'
 alias hg='history | grep'
