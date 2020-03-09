@@ -18,11 +18,9 @@ export PATH=~/Library/Python/3.7/bin:$PATH
 PS1="\[\e[1;34m\][\h:\W]\[\e[m\]\$ "
 
 
-if [ -f ~/.bashrc ] ; then
-. ~/.bashrc
-fi
+[ -f ~/.bashrc ] && . ~/.bashrc
 
+[ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
 
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+[ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 
