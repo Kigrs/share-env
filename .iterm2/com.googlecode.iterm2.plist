@@ -1925,7 +1925,7 @@ Make Text Bigger</string>
 	<key>NoSyncLastTipTime</key>
 	<real>605453153.31794</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>17</integer>
+	<integer>21</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2710,7 +2710,7 @@ Make Text Bigger</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-09T13:08:44Z</date>
+	<date>2020-03-10T13:08:45Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2738,7 +2738,7 @@ Make Text Bigger</string>
 	<key>TabsHaveCloseButton</key>
 	<true/>
 	<key>Use background pattern indicator</key>
-	<false/>
+	<true/>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
