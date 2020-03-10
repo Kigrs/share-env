@@ -18,6 +18,7 @@ alias pwdc='pwd | tr -d "\n" | pbcopy'
 
 alias mem='top -o rsize'
 alias cpu='top -o cpu'
+alias speedtest='speedtest-cli --secure'
 
 alias la='ls -a'
 alias ll='ls -l'
