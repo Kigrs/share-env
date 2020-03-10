@@ -13,6 +13,7 @@ alias c='clear'
 alias m='mkdir'
 alias rmd='rm -r'
 alias v='vim'
+alias vr='vim -R'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
 
 alias mem='top -o rsize'
