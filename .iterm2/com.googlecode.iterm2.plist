@@ -738,7 +738,7 @@ Make Text Bigger</string>
 			<key>Guid</key>
 			<string>9D9B0DF5-1F49-4635-976F-F60554712E6E</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -1371,13 +1371,13 @@ Make Text Bigger</string>
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.5</real>
+			<real>0.050000000000000003</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>0.10000000000000001</real>
 			<key>Bold Color</key>
@@ -1442,6 +1442,8 @@ Make Text Bigger</string>
 			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
+			<key>Custom Window Title</key>
+			<string>q</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1464,6 +1466,8 @@ Make Text Bigger</string>
 			<key>Guid</key>
 			<string>8D680C23-4B02-44B9-AA44-791EB3E29C9C</string>
 			<key>Has Hotkey</key>
+			<true/>
+			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
@@ -1472,11 +1476,11 @@ Make Text Bigger</string>
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string>0</string>
+			<string>.</string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>0</string>
+			<string>.</string>
 			<key>HotKey Key Code</key>
-			<integer>29</integer>
+			<integer>47</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
@@ -1490,13 +1494,13 @@ Make Text Bigger</string>
 			<key>HotKey Window Floats</key>
 			<false/>
 			<key>HotKey Window Reopens On Activation</key>
-			<true/>
+			<false/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
 			<string></string>
 			<key>Initial Use Transparency</key>
-			<true/>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1818,6 +1822,8 @@ Make Text Bigger</string>
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
+			<key>Prevent Opening in a Tab</key>
+			<false/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1825,7 +1831,7 @@ Make Text Bigger</string>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>-1</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
 			<key>Selected Text Color</key>
@@ -1857,7 +1863,7 @@ Make Text Bigger</string>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Space</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1867,13 +1873,15 @@ Make Text Bigger</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.19664300444162441</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -1883,9 +1891,9 @@ Make Text Bigger</string>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/keisuke</string>
 		</dict>
