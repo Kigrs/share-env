@@ -87,6 +87,9 @@ function cdf () {
     fi
 }
 
+line() {
+    printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"
+}
 
 function lscat ()  {
 if [[ $@ == -h || $@ == --help ]]
