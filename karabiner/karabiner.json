@@ -944,7 +944,7 @@
                         ]
                     },
                     {
-                        "description": "Control+SPACE to Control+SPACE+英数",
+                        "description": "Command+SPACE to Command+SPACE+英数",
                         "manipulators": [
                             {
                                 "from": {
@@ -993,28 +993,6 @@
                         ]
                     },
                     {
-                        "description": "Control+Delete to Command+Delete",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": [
-                                        "left_command"
-                                    ]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Control+Shift+H to Command+Delete (on Finder)",
                         "manipulators": [
                             {
@@ -1041,6 +1019,34 @@
                                         "left_command"
                                     ]
                                 },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Control+Shift+SPACE to SPACE",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    },
+                                    {
+                                        "key_code": "spacebar"
+                                    },
+                                    {
+                                        "key_code": "japanese_kana"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
