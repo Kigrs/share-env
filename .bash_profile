@@ -26,6 +26,7 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 . /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
 #export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 #function _ps1_status ( ) { echo __git_ps1 | tr -d "\(\) " | xargs -IX [ -n "X" ] && echo "(\[\e[1;32m\]X\[\e[m\])" }
 #export PS1="\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;34m\]$(__git_ps1)\[\e[m\])\$ "
