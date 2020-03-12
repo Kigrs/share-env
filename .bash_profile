@@ -23,10 +23,16 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 #    printf "%${num}s$rprompt\r" ''
 #}
 #PROMPT_COMMAND=__command_rprompt
+. /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+. /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+#export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-PS1="\[\e[1;34m\][\h:\W]\[\e[m\]\$ "
+#export PS1="\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;34m\]$(__git_ps1)\[\e[m\])\$ "
+export PS1="\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;32m\]$(__git_ps1 | tr -d '\(\) ')\[\e[m\])\$ "
 
 
+[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 
 [ -f ~/.bashrc ] && . ~/.bashrc
 
