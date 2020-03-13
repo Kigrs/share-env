@@ -87,7 +87,7 @@ function cdf () {
     fi
 }
 
-line() {
+function line() {
     printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"
 }
 

@@ -28,13 +28,29 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 #export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-#function _ps1_status ( ) { echo __git_ps1 | tr -d "\(\) " | xargs -IX [ -n "X" ] && echo "(\[\e[1;32m\]X\[\e[m\])" }
 #export PS1="\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;34m\]$(__git_ps1)\[\e[m\])\$ "
-
 #export PS1='\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;32m\]$(__git_ps1 | tr -d "\(\) ")\[\e[m\])\$ '
-export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])")\$ '
-
 #echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo -e "(\[\e[1;32m\]X\[\e[m\])"
+
+
+PRE_PROMPT_DATE=$(date "+%s")
+function _ps1_status () {
+if [ $(date "+%s") -gt $(($PRE_PROMPT_DATE + 3)) ]
+then
+  PRE_PS1_DATE=$(date "+%s") 
+  #PRE_PS1_STATE=$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])") 
+  GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/")
+  [ -n "`echo $GIT_PS1 | grep mstr`" ] && GIT_CLR=31 || GIT_CLR=32
+  PRE_PS1_STATE=$(echo $GIT_PS1 | tr -d "\(\) " | xargs -IX echo -e "(\033[1;${GIT_CLR}mX\033[0m)") 
+  echo $PRE_PS1_STATE
+else
+  echo $PRE_PS1_STATE
+fi
+}
+
+
+#export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])")\$ '
+export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(_ps1_status)\$ '
 
 
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
