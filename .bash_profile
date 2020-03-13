@@ -32,6 +32,16 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 #export PS1='\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;32m\]$(__git_ps1 | tr -d "\(\) ")\[\e[m\])\$ '
 #echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo -e "(\[\e[1;32m\]X\[\e[m\])"
 
+# セッションクローズ時の.bash_historyへの書き込みをoff
+shopt -u histappend
+# .bash_historyとメモリ上のコピーを頻繁に同期
+share_history(){
+  history -a
+  history -c
+  history -r
+}
+PROMPT_COMMAND='share_history'
+
 PRE_PROMPT_DATE=$(date "+%s")
 function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]
