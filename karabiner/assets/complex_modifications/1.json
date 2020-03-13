@@ -257,6 +257,39 @@
 			]
 		},
 		{
+			"description": "Control+N to Escape (on Console application)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "n",
+						"modifiers": {
+							"mandatory": [
+								"left_control"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "escape"
+						},
+						{
+							"key_code": "japanese_eisuu"
+						}
+					],
+					"type": "basic",
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.apple\\.Terminal$",
+								"^com\\.googlecode\\.iterm2$"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"description": "Control+N to Escape",
 			"manipulators": [
 				{
@@ -897,7 +930,6 @@
 					],
 					"type": "basic"
 				},
-				
 				{
 					"from": {
 						"key_code": "9",
@@ -1504,7 +1536,8 @@
 						"modifiers": [
 							"left_command"
 						]
-					},"conditions": [
+					},
+					"conditions": [
 						{
 							"type": "frontmost_application_if",
 							"bundle_identifiers": [
