@@ -35,10 +35,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 
 PRE_PROMPT_DATE=$(date "+%s")
 function _ps1_status () {
-if [ $(date "+%s") -gt $(($PRE_PROMPT_DATE + 3)) ]
+if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]
 then
   PRE_PS1_DATE=$(date "+%s") 
-  #PRE_PS1_STATE=$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])") 
   GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/")
   [ -n "`echo $GIT_PS1 | grep mstr`" ] && GIT_CLR=31 || GIT_CLR=32
   PRE_PS1_STATE=$(echo $GIT_PS1 | tr -d "\(\) " | xargs -IX echo -e "(\033[1;${GIT_CLR}mX\033[0m)") 
@@ -47,7 +46,6 @@ else
   echo $PRE_PS1_STATE
 fi
 }
-
 
 #export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])")\$ '
 export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(_ps1_status)\$ '
