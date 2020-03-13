@@ -72,9 +72,6 @@ vnoremap <Up>   gk
 " シンタックスハイライトの有効化
 syntax enable
 
-" Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:»-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -181,3 +178,15 @@ inoremap <c-d> <delete>
 "function! _(str)
 "    return s:move_cursor_pos_mapping(a:str, "\<Left>")
 "endfunction
+
+
+" Tab系
+" 不可視文字を可視化(タブが「▸-」と表示される)
+"set list listchars=tab:»-
+set list
+set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+hi NonText    ctermbg=None ctermfg=59 guibg=NONE guifg=None
+hi SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=None
+
+
+
