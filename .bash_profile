@@ -32,7 +32,6 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 #export PS1='\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;32m\]$(__git_ps1 | tr -d "\(\) ")\[\e[m\])\$ '
 #echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo -e "(\[\e[1;32m\]X\[\e[m\])"
 
-
 PRE_PROMPT_DATE=$(date "+%s")
 function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]
@@ -46,7 +45,6 @@ else
   echo $PRE_PS1_STATE
 fi
 }
-
 #export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])")\$ '
 export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(_ps1_status)\$ '
 
