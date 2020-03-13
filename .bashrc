@@ -1,5 +1,5 @@
 
-alias al='alias'
+alias a='alias'
 
 alias d='cd ~/Desktop'
 alias h='cd ~'
@@ -14,25 +14,22 @@ alias m='mkdir'
 alias rmd='rm -r'
 alias v='vim'
 alias vr='vim -R'
-alias pwdc='pwd | tr -d "\n" | pbcopy'
+alias pc='pwd | tr -d "\n" | pbcopy'
 
 alias mem='top -o rsize'
 alias cpu='top -o cpu'
 alias speedtest='speedtest-cli --secure'
 
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -la'
 alias ls='ls -G'
 alias ll='ls -lG'
-alias la='ls -a'
+alias la='ls -aG'
+alias lla='ls -laG'
 
-alias lss='less'
+alias lss='less -R'
 alias less='less -R'
 
-alias t='tree -C'
-alias ta='tree -Ca'
-alias tree='tree -N'
+alias t='tree -CN'
+alias ta='tree -CaN -I ".git"'
 alias op='open'
 alias hg='history | grep'
 
