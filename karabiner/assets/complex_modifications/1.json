@@ -587,6 +587,71 @@
 			]
 		},
 		{
+			"description": "Swap Command+Enter for Command+Shift+Enter (on iTerm2)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "semicolon",
+						"modifiers": {
+							"mandatory": [
+								"left_control",
+								"left_command"
+							]
+						}
+					},
+					"to": {
+						"key_code": "semicolon",
+						"modifiers": {
+							"mandatory": [
+								"left_control",
+								"left_command",
+								"left_shift"
+							]
+						}
+					},
+					"type": "basic",
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.googlecode\\.iterm2$"
+							]
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "semicolon",
+						"modifiers": {
+							"mandatory": [
+								"left_control",
+								"left_command",
+								"left_shift"
+							]
+						}
+					},
+					"to": {
+						"key_code": "semicolon",
+						"modifiers": {
+							"mandatory": [
+								"left_control",
+								"left_command"
+							]
+						}
+					},
+					"type": "basic",
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.googlecode\\.iterm2$"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"description": "Control+; to Enter",
 			"manipulators": [
 				{
