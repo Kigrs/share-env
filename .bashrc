@@ -1,75 +1,88 @@
+#!/bin/bash
 
 alias a='alias'
+
+alias p='pwd'
+alias pc='pwd | tr -d "\n" | pbcopy'
 
 alias d='cd ~/Desktop'
 alias h='cd ~'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-alias p='pwd'
-
-alias c='clear'
-alias m='mkdir'
-alias rmd='rm -r'
-alias v='vim'
-alias vr='vim -R'
-alias pc='pwd | tr -d "\n" | pbcopy'
-
-alias mem='top -o rsize'
-alias cpu='top -o cpu'
-alias speedtest='speedtest-cli --secure'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -aG'
 alias lla='ls -laG'
 
-alias lss='less -R'
-alias less='less -R'
-
+alias c='clear'
+alias m='mkdir'
+alias o='open'
+alias f='open .'
 alias t='tree -CN'
 alias ta='tree -CaN -I ".git"'
-alias op='open'
+
 alias hg='history | grep'
+alias mem='top -o rsize'
+alias cpu='top -o cpu'
 
-#alias d='docker'
-#alias d-c='docker-compose'
-
-#alias gcm='git checkout master'
-#alias gpom='git pull origin master'
-#alias gmm='git merge master'
-
-alias gs='git status' # `git status`の確認 
-alias gd='git diff' # `git diff`の確認
-#alias gc='git commit' # commitする
-#alias gca='git commit --amend' #　前のコミットの編集
-alias glo='git log --oneline' # コミットログを各一行で読む
-
-alias g='git'
-alias ga='git add'
-alias gd='git diff'
-alias gs='git status'
-alias gpl='git pull'
-alias gps='git push'
-alias gpp='git pull && git push'
-alias gb='git branch'
-alias gco='git checkout'
-alias gf='git fetch'
-alias gcm='git commit'
-alias gcb='git checkout -b'
-alias gca='git checkout —-amend'
-
-
-alias dk='docker'
-
+alias less='less -R'
 alias grep='grep --color=auto'
 
-alias fin='open .'
-alias f='open .'
+
+# 3rd party
+alias v='vim'
+alias vr='vim -R'
 
 alias py='python'
 alias py3='python3'
+
+alias dk='docker'
+alias dkc='docker-compose'
+
+alias speedtest='speedtest-cli --secure'
+
+
+
+#alias gpom='git pull origin master'
+#alias gmm='git merge master'
+#########################################
+alias g='git'
+
+# branch
+alias gb='git branch'
+
+# temporary (TODO make func:'gco' 'gcof?')
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+#alias gca='git checkout —-amend'
+
+# edit
+alias ga='git add'
+alias ga.='git add .'
+
+alias gcm='git commit -m'
+alias gcma='git commit -ma'
+
+alias gun='git reset HEAD' # back added staging files to unstaged
+alias grhd='git reset --hard' # reset completely staged files
+
+# remote
+alias gf='git fetch'
+alias gpl='git pull'
+alias gps='git push'
+alias gpp='git pull && git push'
+
+# check
+alias gs='git status'
+alias glo='git log --oneline' # コミットログを各一行で読む
+alias gd='git diff'
+
+#########################################
 
 function srch () { grep -E $1 -rl $2; }
 

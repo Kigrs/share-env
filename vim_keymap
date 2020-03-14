@@ -1,0 +1,29 @@
+# 設定したい vim key mapping をここに残す
+
+
+<normal mode>
+
+Enter で　改行する
+Ctl+SHIFT+H で　行ごと消す
+
+
+<insert mode>
+
+行頭/行末 への移動
+
+
+Ctl+SHIFT+H で　行ごと消す
+
+Ctr+H で　左を消す ok↲
+Ctl+D で　右を消す ok↲
+
+SHIFT+H で　左行全部消す↲
+SHIFT+D で　右行全部消す↲
+
+Ctr+M で　右行全部消す
+
+
+<visual mode>
+
+
+
