@@ -16,7 +16,7 @@ set showcmd
 " yでコピーした時にクリップボードに入る
 set guioptions+=a
 " ヤンクでクリップボードにコピー
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed
 
 "viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
 set nocompatible
