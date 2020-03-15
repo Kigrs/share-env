@@ -102,6 +102,7 @@ alias gpp='git pull && git push'
 # check
 alias gs='git status'
 alias gd='git diff'
+alias gdcs='git diff --compact-summary'
 alias gsh='git show'
 alias gbl='git blame'
 alias glo='git log --oneline' # コミットログを各一行で読む
