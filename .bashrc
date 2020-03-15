@@ -62,7 +62,7 @@ alias gbdf='git branch -D'
 
 # temporary (TODO make func:'gco' 'gcof?')
 #alias gco='git checkout'
-alias gcob='git checkout -b'
+#alias gcob='git checkout -b'
 alias gcom='git checkout master'
 #alias gca='git checkout —-amend'
 
@@ -89,6 +89,7 @@ alias ga.='git add .'
 
 alias gcm='git commit -m'
 alias gcma='git commit -ma'
+alias gd='git diff'
 
 alias gun='git reset HEAD' # back added staging files to unstaged
 alias grhd='git reset --hard' # reset completely staged files
@@ -105,6 +106,7 @@ alias gd='git diff'
 alias gdcs='git diff --compact-summary'
 alias gsh='git show'
 alias gbl='git blame'
+alias gl='git log'
 alias glo='git log --oneline' # コミットログを各一行で読む
 alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 
