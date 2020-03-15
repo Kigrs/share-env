@@ -447,7 +447,7 @@ Maximize Active Pane</string>
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>176 70 1130 587 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 70 1130 587 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_9D9B0DF5-1F49-4635-976F-F60554712E6E</key>
@@ -1160,7 +1160,7 @@ Maximize Active Pane</string>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Space</key>
 			<integer>0</integer>
 			<key>Sync Title</key>
@@ -1896,7 +1896,7 @@ Maximize Active Pane</string>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Space</key>
 			<integer>-1</integer>
 			<key>Sync Title</key>
@@ -1957,12 +1957,12 @@ Maximize Active Pane</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{77, 723}</string>
+		<string>{122, 711}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>EDDAEBDD-CA6F-4F55-BEF2-7B9BB5F58B64</string>
 	<key>NoSyncLastTipTime</key>
-	<real>605802827.240852</real>
+	<real>605966907.85768199</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
 	<integer>25</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2695,6 +2695,7 @@ Maximize Active Pane</string>
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -2756,7 +2757,7 @@ Maximize Active Pane</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-13T13:08:50Z</date>
+	<date>2020-03-15T12:04:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>

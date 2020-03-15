@@ -84,8 +84,9 @@ fi
 }
 
 # edit
-alias ga='git add'
-alias ga.='git add .'
+#alias ga='git add'
+#alias ga.='git add .'
+function ga () { if [ -z "$1" ]; then git add .; else git add $@; fi }
 
 alias gcm='git commit -m'
 alias gcma='git commit -ma'
