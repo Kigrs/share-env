@@ -99,7 +99,7 @@ alias gpp='git pull && git push'
 alias gs='git status'
 alias glo='git log --oneline' # コミットログを各一行で読む
 alias gd='git diff'
-
+alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 #########################################
 
 function srch () { grep -E $1 -rl $2; }
