@@ -54,6 +54,8 @@ alias g='git'
 
 # branch
 alias gb='git branch'
+alias gbd='git branch -d'
+alias gbdf='git branch -D'
 
 # temporary (TODO make func:'gco' 'gcof?')
 #alias gco='git checkout'
@@ -77,7 +79,6 @@ else
     fi
 fi
 }
-
 
 # edit
 alias ga='git add'
