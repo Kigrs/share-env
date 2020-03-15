@@ -56,10 +56,28 @@ alias g='git'
 alias gb='git branch'
 
 # temporary (TODO make func:'gco' 'gcof?')
-alias gco='git checkout'
+#alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcom='git checkout master'
 #alias gca='git checkout —-amend'
+
+function gco () {
+local branches=$(git branch 2>&1)
+[ -n "$(echo $branches | grep fatal)" ] && echo "No git repository found." && return 1
+[ -z "$1" ] && echo "Select target branch." && return 1
+
+if [ -n "$(echo $branches | grep $1)" ]; then
+    git checkout $1
+else
+    read -p "Make new branch? [$1] (y/N): " yn
+    if [[ $yn = [yY] ]]; then
+        git checkout -b ${1}
+    else
+        echo Checkout aborted.
+    fi
+fi
+}
+
 
 # edit
 alias ga='git add'
@@ -87,14 +105,14 @@ alias gd='git diff'
 function srch () { grep -E $1 -rl $2; }
 
 function cdf () {
-    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
-    if [ "$target" != "" ]
-    then
-        cd "$target"
-        pwd
-    else
-        echo 'No Finder window found' >&2
-    fi
+local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+if [ "$target" != "" ]
+then
+    cd "$target"
+    pwd
+else
+    echo 'No Finder window found' >&2
+fi
 }
 
 function line() {
