@@ -54,6 +54,9 @@ alias g='git'
 
 # branch
 alias gb='git branch'
+alias gbr='git branch -r'
+alias gba='git branch -a'
+alias gbm='git branch -m'
 alias gbd='git branch -d'
 alias gbdf='git branch -D'
 
@@ -98,9 +101,12 @@ alias gpp='git pull && git push'
 
 # check
 alias gs='git status'
-alias glo='git log --oneline' # コミットログを各一行で読む
 alias gd='git diff'
+alias gsh='git show'
+alias gbl='git blame'
+alias glo='git log --oneline' # コミットログを各一行で読む
 alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
+
 #########################################
 
 function srch () { grep -E $1 -rl $2; }
