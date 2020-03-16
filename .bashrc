@@ -60,6 +60,8 @@ alias gbm='git branch -m'
 alias gbd='git branch -d'
 alias gbdf='git branch -D'
 
+alias gbdr='git push -d origin'
+
 # temporary (TODO make func:'gco' 'gcof?')
 #alias gco='git checkout'
 #alias gcob='git checkout -b'
@@ -67,18 +69,25 @@ alias gcom='git checkout master'
 #alias gca='git checkout —-amend'
 
 function gco () {
-local branches=$(git branch 2>&1)
-[ -n "$(echo $branches | grep fatal)" ] && echo "No git repository found." && return 1
+local branches=$(git branch)
+[ -z "$branches" ] && return 1
 [ -z "$1" ] && echo "Select target branch." && return 1
 
 if [ -n "$(echo $branches | grep $1)" ]; then
     git checkout $1
 else
-    read -p "Make new branch? [$1] (y/N): " yn
-    if [[ $yn = [yY] ]]; then
-        git checkout -b ${1}
+    git fetch
+    [ "$?" -ne "0" ] && return 1
+    branches=$(git branch -r)
+    if [ -n "$(echo $branches | grep $1)" ]; then
+        git checkout -b $1 origin/$1
     else
-        echo Checkout aborted.
+        read -p "Make new branch? [$1] (y/N): " yn
+        if [[ $yn = [yY] ]]; then
+            git checkout -b $1
+        else
+            echo Checkout aborted.
+        fi
     fi
 fi
 }
@@ -97,14 +106,27 @@ alias grhd='git reset --hard' # reset completely staged files
 
 # remote
 alias gf='git fetch'
-alias gpl='git pull'
-alias gps='git push'
-alias gpp='git pull && git push'
+#alias gpl='git pull'
+#alias gps='git push'
+#alias gpp='git pull && git push'
+function gpl () {
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    git pull origin $current_branch
+}
+function gps () {
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    git push origin $current_branch
+}
+function gpp () {
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    git pull origin $current_branch && git push origin $current_branch
+}
+
 
 # check
 alias gs='git status'
 alias gd='git diff'
-alias gdcs='git diff --compact-summary'
+alias gdc='git diff --compact-summary'
 alias gsh='git show'
 alias gbl='git blame'
 alias gl='git log'
