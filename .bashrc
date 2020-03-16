@@ -69,8 +69,13 @@ alias gbdf='git branch -D'
 alias gbdr='git push -d origin' # delete remote branch
 ## checkout
 alias gcom='git checkout master'
-
 function gco () {
+    git branch -a --sort=-authordate |\
+    grep -v -e '->' -e '*' | perl -pe 's/^\h+//g' |\
+    perl -pe 's#^remotes/origin/###' | perl -nle 'print if !$c{$_}++' |\
+    peco | xargs git checkout
+}
+function gcob () {
 local branches=$(git branch)
 [ -z "$branches" ] && return 1
 [ -z "$1" ] && echo "Select target branch." && return 1
