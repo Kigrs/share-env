@@ -1,3 +1,5 @@
+# EDITOR
+export EDITOR='vim'
 
 # PATH
 export PATH=~/.nodebrew/current/bin:$PATH
