@@ -35,7 +35,7 @@ export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(_ps1_status)\$ '
 #>> $ 
 
 #History
-HISTTIMEFORMAT='%m/%d_%H:%M '
+HISTTIMEFORMAT='%d_%H:%M '
 HISTSIZE=100000
 HISTFILESIZE=${HISTSIZE}
 HISTCONTROL=ignoreboth
