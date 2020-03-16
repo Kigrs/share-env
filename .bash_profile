@@ -27,10 +27,6 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
-#export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-#export PS1="\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;34m\]$(__git_ps1)\[\e[m\])\$ "
-#export PS1='\[\e[1;34m\][\h:\W]\[\e[m\](\[\e[1;32m\]$(__git_ps1 | tr -d "\(\) ")\[\e[m\])\$ '
-#echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo -e "(\[\e[1;32m\]X\[\e[m\])"
 
 # セッションクローズ時の.bash_historyへの書き込みをoff
 shopt -u histappend
@@ -55,7 +51,6 @@ else
   echo $PRE_PS1_STATE
 fi
 }
-#export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(echo $(__git_ps1) | tr -d "\(\) " | xargs -IX echo "(\[\e[1;32m\]X\[\e[m\])")\$ '
 export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]$(_ps1_status)\$ '
 
 

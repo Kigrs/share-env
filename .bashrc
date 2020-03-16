@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ -z "`declare -F | grep _ps1_status`" ] && . ~/.bash_profile && return 0
+
 alias a='alias'
 
 alias p='pwd'
