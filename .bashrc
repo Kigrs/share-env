@@ -47,26 +47,22 @@ alias speedtest='speedtest-cli --secure'
 alias rm='gomi'
 
 
-#alias gpom='git pull origin master'
-#alias gmm='git merge master'
-#########################################
+###########################################################################################################################################################
 alias g='git'
 
 # branch
+## list
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gba='git branch -a'
+## rename
 alias gbm='git branch -m'
+## delete
 alias gbd='git branch -d'
 alias gbdf='git branch -D'
-
-alias gbdr='git push -d origin'
-
-# temporary (TODO make func:'gco' 'gcof?')
-#alias gco='git checkout'
-#alias gcob='git checkout -b'
+alias gbdr='git push -d origin' # delete remote branch
+## checkout
 alias gcom='git checkout master'
-#alias gca='git checkout —-amend'
 
 function gco () {
 local branches=$(git branch)
@@ -93,22 +89,18 @@ fi
 }
 
 # edit
-#alias ga='git add'
-#alias ga.='git add .'
+## add
 function ga () { if [ -z "$1" ]; then git add .; else git add $@; fi }
-
+##commit
 alias gcm='git commit -m'
 alias gcma='git commit -ma'
-alias gd='git diff'
-
+## unstage
 alias gun='git reset HEAD' # back added staging files to unstaged
+## reset
 alias grhd='git reset --hard' # reset completely staged files
 
 # remote
 alias gf='git fetch'
-#alias gpl='git pull'
-#alias gps='git push'
-#alias gpp='git pull && git push'
 function gpl () {
     local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
     git pull origin $current_branch
@@ -122,7 +114,6 @@ function gpp () {
     git pull origin $current_branch && git push origin $current_branch
 }
 
-
 # check
 alias gs='git status'
 alias gd='git diff'
@@ -133,7 +124,10 @@ alias gl='git log'
 alias glo='git log --oneline' # コミットログを各一行で読む
 alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 
-#########################################
+###########################################################################################################################################################
+#alias gpom='git pull origin master'
+#alias gmm='git merge master'
+
 
 function srch () { grep -E $1 -rl $2; }
 
