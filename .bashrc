@@ -98,6 +98,8 @@ alias gcma='git commit -ma'
 alias gun='git reset HEAD' # back added staging files to unstaged
 ## reset
 alias grhd='git reset --hard' # reset completely staged files
+## merge
+alias gm='git merge'
 
 # remote
 alias gf='git fetch'
