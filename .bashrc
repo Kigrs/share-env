@@ -44,7 +44,7 @@ alias dk='docker'
 alias dkc='docker-compose'
 
 alias speedtest='speedtest-cli --secure'
-
+alias rm='gomi'
 
 
 #alias gpom='git pull origin master'
