@@ -110,15 +110,15 @@ alias gf='git fetch'
 #alias gps='git push'
 #alias gpp='git pull && git push'
 function gpl () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
     git pull origin $current_branch
 }
 function gps () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
     git push origin $current_branch
 }
 function gpp () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\((.*)\s.*\)$/\1/")
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
     git pull origin $current_branch && git push origin $current_branch
 }
 
