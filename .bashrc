@@ -106,6 +106,8 @@ alias gun='git reset HEAD' # back added staging files to unstaged
 alias grhd='git reset --hard' # reset completely staged files
 ## merge
 alias gm='git merge'
+## revert
+alias grv='git revert'
 
 # remote
 alias gf='git fetch'
