@@ -36,10 +36,15 @@ alias cpu='top -o cpu'
 alias less='less -R'
 alias grep='grep --color=auto'
 
-
 # 3rd party
 alias v='vim'
 alias vr='vim -R'
+function v. () {
+    local file=$(find ~/dotfiles/ -name ".*" -type f -maxdepth 1 -not -iwholename "*/.DS_Store" | peco)
+    vim $file
+    [ -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
+    return 0
+}
 
 alias py='python'
 alias py3='python3'
@@ -54,6 +59,8 @@ export HSTR_CONFIG=hicolor       # get more colors
 
 
 ###########################################################################################################################################################
+# Git
+
 alias g='git'
 
 # branch
@@ -139,10 +146,14 @@ alias gl='git log'
 alias glo='git log --oneline' # コミットログを各一行で読む
 alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 
-###########################################################################################################################################################
 #alias gpom='git pull origin master'
 #alias gmm='git merge master'
+###########################################################################################################################################################
+# GitHub
 
+alias ghiv='gh issue list --state open | peco | cut -f1 | xargs -I {} gh issue view {}'
+
+###########################################################################################################################################################
 
 function srch () { grep -E $1 -rl $2; }
 
