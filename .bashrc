@@ -41,6 +41,7 @@ alias v='vim'
 alias vr='vim -R'
 function v. () {
     local file=$(find ~/dotfiles/ -name ".*" -type f -maxdepth 1 -not -iwholename "*/.DS_Store" | peco)
+    [ -z "$file" ] && return 0
     vim $file
     [ -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
     return 0
@@ -77,10 +78,11 @@ alias gbdr='git push -d origin' # delete remote branch
 ## checkout
 alias gcom='git checkout master'
 function gco () {
+    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
     git branch -a --sort=-authordate |\
     grep -v -e '->' -e '*' | perl -pe 's/^\h+//g' |\
     perl -pe 's#^remotes/origin/###' | perl -nle 'print if !$c{$_}++' |\
-    peco | xargs git checkout
+    grep -v $current_branch | peco --select-1 | xargs git checkout
 }
 function gcob () {
 local branches=$(git branch)
@@ -146,13 +148,35 @@ alias gl='git log'
 alias glo='git log --oneline' # コミットログを各一行で読む
 alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by\"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 
+gtf() {
+  local out shas sha q k
+  while out=$(
+      git log --graph --color=always \
+          --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by"%C(cyan ul)%an%Creset" %x09%C(auto)%s %d' "$@" |
+      fzf --ansi --multi --no-sort --reverse --query="$q" \
+          --print-query --expect=ctrl-d); do
+    q=$(head -1 <<< "$out")
+    k=$(head -2 <<< "$out" | tail -1)
+    shas=$(sed '1,2d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+    [ -z "$shas" ] && continue
+    if [ "$k" = ctrl-d ]; then
+      git diff --color=always $shas | less -R
+    else
+      for sha in $shas; do
+        git show --color=always $sha | less -R
+      done
+    fi
+  done
+}
+
 #alias gpom='git pull origin master'
 #alias gmm='git merge master'
 ###########################################################################################################################################################
 # GitHub
 
 alias ghiv='gh issue list --state open | peco | cut -f1 | xargs -I {} gh issue view {}'
-
+alias ghpv='gh pr list --state open | peco | cut -f1 | xargs -I {} gh pr view {}'
+# ex) ghiv [-p]  -  It can be shown in console with [-p] option.
 ###########################################################################################################################################################
 
 function srch () { grep -E $1 -rl $2; }
@@ -173,6 +197,7 @@ function line() {
 }
 
 function lscat ()  {
+local ARG_FST ARG_RST N DIR
 if [[ $@ == -h || $@ == --help ]]
 then 
 	echo -e "\nUsage: lscat [show_line_num] [dir1 dir2 ..]\n"
