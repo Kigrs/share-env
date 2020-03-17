@@ -175,8 +175,8 @@ gtf() {
 ###########################################################################################################################################################
 # GitHub
 
-alias ghiv='gh issue list --state open | peco | cut -f1 | xargs -I {} gh issue view {}'
-alias ghpv='gh pr list --state open | peco | cut -f1 | xargs -I {} gh pr view {}'
+alias ghiv='gh issue list --state open | peco --select-1 | cut -f1 | xargs -I {} gh issue view {}'
+alias ghpv='gh pr list --state open | peco --select-1 | cut -f1 | xargs -I {} gh pr view {}'
 # ex) ghiv [-p]  -  It can be shown in console with [-p] option.
 ###########################################################################################################################################################
 
