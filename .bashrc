@@ -115,10 +115,14 @@ function ga () { if [ -z "$1" ]; then git add .; else git add $@; fi }
 ##commit
 alias gcm='git commit -m'
 alias gcma='git commit -ma'
+
 ## unstage
-alias gun='git reset HEAD' # back added staging files to unstaged
-## reset
-alias grhd='git reset --hard' # reset completely staged files
+alias gus='git reset --mixed HEAD --' # [file] back to unstaged
+## unedit
+alias gue='git checkout HEAD --' # [file] revert before edit
+## hard reset
+alias grhd='git reset --hard' # reset completely & back to prev commit
+
 ## merge
 alias gm='git merge'
 ## revert
