@@ -58,7 +58,7 @@ alias speedtest='speedtest-cli --secure'
 alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
-alias ssh-ec2='ssh -i ~/.ssh/keisuke.pem ec2-user@$(aws ec2 describe-instances | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
+alias ssh-ec2='ssh -i ~/.ssh/private.pem ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
 
 ###########################################################################################################################################################
 # Git
