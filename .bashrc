@@ -198,11 +198,11 @@ function line() {
 }
 
 function lscat ()  {
-local ARG_FST ARG_RST N DIR
 if [[ $@ == -h || $@ == --help ]]
 then 
 	echo -e "\nUsage: lscat [show_line_num] [dir1 dir2 ..]\n"
-else 
+else
+    local ARG_FST ARG_RST N DIR file
 	echo $@ | while read ARG_FST ARG_RST
 	do
 		[ -z $ARG_FST ] && ARG_FST=10
@@ -213,8 +213,7 @@ else
 		
 		find $DIR -type f -maxdepth 1 2>/dev/null | while read file
 		do 
-			echo -en "* "
-			ls -l "$file"
+			echo -en "* "; ls -l "$file"
 			if [ "`file --mime "$file" | grep binary`" ]; then
 				echo "Notice: '$(basename "$file")' is a binary."
 			else
