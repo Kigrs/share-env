@@ -977,7 +977,7 @@
                         ]
                     },
                     {
-                        "description": "Command+SPACE to Command+SPACE+英数",
+                        "description": "Command+SPACE to Control+,+英数",
                         "manipulators": [
                             {
                                 "from": {
@@ -990,9 +990,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "spacebar",
+                                        "key_code": "comma",
                                         "modifiers": [
-                                            "right_command"
+                                            "left_control"
                                         ]
                                     },
                                     {
@@ -1012,9 +1012,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "spacebar",
+                                        "key_code": "comma",
                                         "modifiers": [
-                                            "left_command"
+                                            "left_control"
                                         ]
                                     },
                                     {

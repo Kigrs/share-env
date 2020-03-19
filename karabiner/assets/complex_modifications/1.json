@@ -1469,6 +1469,55 @@
 			]
 		},
 		{
+			"description": "Command+SPACE to Control+,+英数",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "spacebar",
+						"modifiers": {
+							"mandatory": [
+								"right_command"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "comma",
+							"modifiers": [
+								"left_control"
+							]
+						},
+						{
+							"key_code": "japanese_eisuu"
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "spacebar",
+						"modifiers": {
+							"mandatory": [
+								"left_command"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "comma",
+							"modifiers": [
+								"left_control"
+							]
+						},
+						{
+							"key_code": "japanese_eisuu"
+						}
+					]
+				}
+			]
+		},
+		{
 			"description": "Control+, to Control+,+英数",
 			"manipulators": [
 				{
