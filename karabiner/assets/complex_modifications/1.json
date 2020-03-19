@@ -1469,6 +1469,33 @@
 			]
 		},
 		{
+			"description": "Control+, to Control+,+英数",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "comma",
+						"modifiers": {
+							"mandatory": [
+								"left_control"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "comma",
+							"modifiers": [
+								"left_control"
+							]
+						},
+						{
+							"key_code": "japanese_eisuu"
+						}
+					]
+				}
+			]
+		},
+		{
 			"description": "F,Jの同時押しでAlfred起動",
 			"manipulators": [
 				{
