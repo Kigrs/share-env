@@ -78,8 +78,9 @@ alias gba='git branch -a'
 alias gbm='git branch -m'
 ## delete
 alias gbd='git branch -d'
-alias gbdf='git branch -D'
+alias gbD='git branch -D'
 alias gbdr='git push -d origin' # delete remote branch
+function gbda () { git branch -d $1; git push -d origin $1; }
 ## checkout
 alias gcom='git checkout master'
 function gco () {
