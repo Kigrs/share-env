@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Bitwarden CLI</name>
+  <version>1.0.1</version>
+  <bundle>com.lisowski-development.alfred.bitwarden</bundle>
+  <updated>1532307436</updated>
+  <file>bitwarden-cli-alfred-workflow.alfredworkflow</file>
+</workflow>

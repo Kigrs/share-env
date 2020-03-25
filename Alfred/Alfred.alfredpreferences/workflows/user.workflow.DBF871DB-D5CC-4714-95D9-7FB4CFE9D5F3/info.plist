@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alfredapp.ts.who</string>
+	<key>connections</key>
+	<dict>
+		<key>CD059C6A-8C20-4C15-87F5-A1C55E56B714</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C459CDA-E974-475F-B2B5-67B175E10BF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vincent Tacquet</string>
+	<key>description</key>
+	<string>Find IP and DNS information</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Who</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>who</string>
+				<key>subtext</key>
+				<string>Example: 8.8.8.8 or www.google.com or &lt;nothing&gt; for your own ip</string>
+				<key>text</key>
+				<string>who ‘{query}’</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD059C6A-8C20-4C15-87F5-A1C55E56B714</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://ip.tacquet.be/{query}?pretty=1</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0C459CDA-E974-475F-B2B5-67B175E10BF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Use "who" to find your own IP
+
+Use "who &lt;ip address&gt; or who &lt;dns name&gt;" to get more info</string>
+	<key>uidata</key>
+	<dict>
+		<key>0C459CDA-E974-475F-B2B5-67B175E10BF5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>445</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>CD059C6A-8C20-4C15-87F5-A1C55E56B714</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://www.tacquet.be</string>
+</dict>
+</plist>

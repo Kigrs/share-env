@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clearKeywordEnabled</key>
+	<false/>
+	<key>hotkey</key>
+	<dict>
+		<key>key</key>
+		<integer>18</integer>
+		<key>mod</key>
+		<integer>262144</integer>
+		<key>string</key>
+		<string>1</string>
+	</dict>
+	<key>snippetKeyword</key>
+	<string>;</string>
+	<key>snippetKeywordEnabled</key>
+	<false/>
+	<key>snippetsAtTop</key>
+	<false/>
+</dict>
+</plist>

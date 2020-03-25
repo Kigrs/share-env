@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Google Image Suggest</name>
+  <version>0.001</version>
+  <bundle>com.jrejaud.googleimagesuggest</bundle>
+  <updated>1497472689</updated>
+  <file>google_image_suggest.alfredworkflow</file>
+</workflow>

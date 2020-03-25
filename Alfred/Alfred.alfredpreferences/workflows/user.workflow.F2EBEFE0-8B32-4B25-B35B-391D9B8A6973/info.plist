@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>gheardi.riccardo.timer</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>00B448D0-B0FB-4C5D-A237-52B83069A58E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DD58FC9E-441F-4EDD-8F9C-87F760CDEE51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A41BF65D-BE28-47C7-B33F-56E156503116</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>02F0141F-EFA8-4739-B4B6-E03D0EF0ABB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3F274EA3-54BC-440C-A0F0-2161238A73EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>225ED2BA-4749-4CC2-AE8A-C2EB5BF008D2</key>
+		<array/>
+		<key>2E889EF0-5D79-4E22-91F2-677EBACAC562</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E50ABA29-CC92-4FEE-BC19-6764918F242F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FABD6928-C2A2-4630-80FD-E4DCC5186EEB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CB59369-3F1D-4C6D-A93B-A9BB2192624E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>00B448D0-B0FB-4C5D-A237-52B83069A58E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>37455501-885F-4023-BBBA-53765F647CBA</key>
+		<array/>
+		<key>3F274EA3-54BC-440C-A0F0-2161238A73EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E889EF0-5D79-4E22-91F2-677EBACAC562</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>593BEDD0-90D3-44EB-A8FA-B207543286BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1DEC7314-78F3-467D-B0AC-54E0A7E8973D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EEB21CDB-A28C-4F3F-BAC3-1CEAAB02A1FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5D50991F-16B3-46E3-8CF7-31AE42533088</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8F85E69-A6E6-4236-9502-A25F314FADC8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5667DE8F-99B0-485C-BAA1-19FAA972B099</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E14105B-E7D7-432A-B6BC-446CC5277B57</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>02F0141F-EFA8-4739-B4B6-E03D0EF0ABB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A8CE9547-0178-4C91-82B0-1C66E66A7711</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>72EBE301-702F-4D06-A169-279A4016D3AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91D2FB29-7164-4509-93E0-7FCC2E46907D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7952A7B5-50DC-4903-8CB9-3836B464573B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7601526D-1E24-43C2-9643-EFC44096D8CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8B532EA1-F46D-4AD3-9E34-BAFB8E6ADF71</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C57B2C9B-A826-49D4-8AF2-B5A4311D15BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>90273618-B4E4-46A9-B93D-CC7D2DE161E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8B532EA1-F46D-4AD3-9E34-BAFB8E6ADF71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A2F3E19-C21B-4CE3-8399-D0FF25651BDF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>91D2FB29-7164-4509-93E0-7FCC2E46907D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7952A7B5-50DC-4903-8CB9-3836B464573B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4A7CCDE6-5632-4AE5-8C56-FD5A5A97713D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A41BF65D-BE28-47C7-B33F-56E156503116</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F777B9B-6636-4487-B011-923ECCF94EAC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C57B2C9B-A826-49D4-8AF2-B5A4311D15BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6E14105B-E7D7-432A-B6BC-446CC5277B57</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CC9CE089-264F-43E7-815A-DBA6B33C8A24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EEB21CDB-A28C-4F3F-BAC3-1CEAAB02A1FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD511EA9-12B0-47FF-AC12-DAD82D9D087D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4BFB372B-98EC-498B-AF9C-12B3E53708A4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DD58FC9E-441F-4EDD-8F9C-87F760CDEE51</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3475480-DD5A-4091-9B8B-4233215A7342</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E50ABA29-CC92-4FEE-BC19-6764918F242F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>225ED2BA-4749-4CC2-AE8A-C2EB5BF008D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E8F85E69-A6E6-4236-9502-A25F314FADC8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BB5BA8F-EA8C-481B-B697-D8C9A4278E21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EEB21CDB-A28C-4F3F-BAC3-1CEAAB02A1FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90273618-B4E4-46A9-B93D-CC7D2DE161E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FABD6928-C2A2-4630-80FD-E4DCC5186EEB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>37455501-885F-4023-BBBA-53765F647CBA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Keisuke Igarashi (Riccardo Gherardi)</string>
+	<key>description</key>
+	<string>Simple timer</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Timer</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>「{var:startmsg}」start : {var:startTime},  end : {var:endTime}</string>
+				<key>title</key>
+				<string>{var:endmsg}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>225ED2BA-4749-4CC2-AE8A-C2EB5BF008D2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>1DEC7314-78F3-467D-B0AC-54E0A7E8973D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:timermode}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>interval</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>E50ABA29-CC92-4FEE-BC19-6764918F242F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:startmsg}</string>
+				<key>title</key>
+				<string>Starting timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8B532EA1-F46D-4AD3-9E34-BAFB8E6ADF71</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>from itertools import takewhile, dropwhile, islice, chain
+from operator import mul
+import random
+import json
+import sys
+import re
+seconds = 0
+TAG_CATEGORY = {'st': 'study', 'ma': 'mail', 'ta': 'task', 'ad': 'admin', 'pr': 'private'}
+
+tokens = sys.argv[1].replace('\xe3\x80\x80',' ').split()
+hms = list(islice(takewhile(lambda s: re.match('^\d+$', s), tokens), 0, 3))
+message = ' '.join(islice(tokens, len(hms), None)).strip()
+hms = ['050', ['0']+hms+['0'], ['0']+hms, hms][len(hms)]
+
+hms_str = ''.join(chain(*dropwhile(lambda x: x[0]=='0', zip(hms, 'hms', '   '))))
+seconds = sum(map(mul, map(int, hms), (3600, 60, 1)))
+
+compliment = random.choice(("Good job!","You did it!","Well done!","Nice!","You made it!","You deserve it!","Great job!","Way to go!"))
+
+msglength = len(message.split())
+tag = message.split(' ',1)[0] if msglength &gt; 0 else ""
+startmsg = message.split(' ',1)[1] if msglength &gt;= 2 else message if msglength == 1 else ""
+tag = 'other' if not tag in TAG_CATEGORY.keys() else TAG_CATEGORY[tag]
+
+print json.dumps({
+    "variables":
+    {
+        "startmsg": "" if not message else startmsg,
+        "endmsg": compliment,
+		"tag": "" if not message else tag,
+		"seconds": str(seconds),
+		"timermode": "interval"
+    },
+    "items":
+    [{
+		"uid": "timer",
+		"title": "Set a timer for {}".format(hms_str),
+		"subtitle": message,
+		"arg": str(seconds),
+		"autocomplete": "timer"
+    }]
+})
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Example: t 3 30 "tea is ready"</string>
+				<key>title</key>
+				<string>Set a timer</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>593BEDD0-90D3-44EB-A8FA-B207543286BD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>mkdir -p ./tmp
+
+caffeinate -ds -t $seconds &amp;
+caffeinate_pid=$!
+/usr/local/bin/python3 ./timer.py &amp;&gt; /dev/null
+kill $caffeinate_pid &amp;&gt; /dev/null
+
+ABORT=0
+source "./tmp/$startmsg.txt" &amp;&amp; rm "./tmp/$startmsg.txt"
+
+json=$(cat &lt;&lt; EOS
+{
+	"alfredworkflow": {
+		"arg": $SUSPENSION_PERIOD,
+		"variables": {
+			"aborted": $ABORT,
+			"suspensionPeriod": $SUSPENSION_PERIOD,
+			"startmsg": "${START_MSG:=$startmsg}"
+		}
+	}
+}
+EOS
+)
+
+echo "$json"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6E14105B-E7D7-432A-B6BC-446CC5277B57</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>largetypetext</key>
+				<string>Time's up!
+「{var:startmsg}」</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>37455501-885F-4023-BBBA-53765F647CBA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>90273618-B4E4-46A9-B93D-CC7D2DE161E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>2E889EF0-5D79-4E22-91F2-677EBACAC562</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:timermode}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>alarm</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>FABD6928-C2A2-4630-80FD-E4DCC5186EEB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>startTime</key>
+					<string>{datetime:HH:mm}</string>
+					<key>startTime_hhmmss</key>
+					<string>{datetime:HH:mm:ss}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C57B2C9B-A826-49D4-8AF2-B5A4311D15BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:aborted}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>1</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>02F0141F-EFA8-4739-B4B6-E03D0EF0ABB2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>endTime</key>
+					<string>{datetime:HH:mm}</string>
+					<key>endTime_hhmmss</key>
+					<string>{datetime:HH:mm:ss}</string>
+					<key>today</key>
+					<string>{date:yyyy-MM-dd}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3F274EA3-54BC-440C-A0F0-2161238A73EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:seconds}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>0</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>EEB21CDB-A28C-4F3F-BAC3-1CEAAB02A1FD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>s</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>from itertools import takewhile, dropwhile, islice, chain
+from operator import mul
+import random
+import json
+import sys
+import re
+from datetime import datetime
+import time
+seconds = 0
+
+tokens = sys.argv[1].replace('\xe3\x80\x80',' ').split()
+hm = list(islice(takewhile(lambda s: re.match('^\d+$', s), tokens), 0, 2))
+message = ' '.join(islice(tokens, len(hm), None)).strip()
+hm = [['00','00'], hm+['0'], hm][len(hm)]
+hh,mm = int(hm[0]),int(hm[1])
+
+dt_s = datetime.now()
+dt_e = datetime(dt_s.year, dt_s.month, dt_s.day+((hh+mm//60)//24), (hh+mm//60)%24, mm%60)
+tp_s, tp_e = int(time.mktime(dt_s.timetuple())), int(time.mktime(dt_e.timetuple()))
+hm_str = str(hh).zfill(2)+':'+str(mm).zfill(2)
+seconds = max(int(tp_e - tp_s),0)
+
+compliment = random.choice(("Good job!","You did it!","Well done!","Nice!","You made it!","You deserve it!","Great job!","Way to go!"))
+
+print json.dumps({
+    "variables":
+    {
+        "startmsg": "" if not message else message,
+        "endmsg": compliment,
+		"tag": "" if not message else re.split(' ', message)[0],
+		"seconds": str(seconds),
+		"timermode": "alarm"
+    },
+    "items":
+    [{
+		"uid": "timer",
+		"title": "Set a timer until {}.".format(hm_str) if seconds&gt;0 else "Set end time.",
+		"subtitle": message,
+		"arg": str(seconds),
+		"autocomplete": "timer"
+    }]
+})
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Example: s 9 30 "time to go"</string>
+				<key>title</key>
+				<string>Set a timer</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CC9CE089-264F-43E7-815A-DBA6B33C8A24</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Glass</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>0CB59369-3F1D-4C6D-A93B-A9BB2192624E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Tink</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>5A2F3E19-C21B-4CE3-8399-D0FF25651BDF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>A8CE9547-0178-4C91-82B0-1C66E66A7711</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Make insert script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>4BFB372B-98EC-498B-AF9C-12B3E53708A4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>### Record insert query ###
+
+COLLECTION_NAME='what_i_did'
+OUTPUT_PATH='/Applications/Metabase/tmp_insert_query'
+
+startDateForMongo="${today}T${startTime_hhmmss}+00:00"
+endDateForMongo="${today}T${endTime_hhmmss}+00:00"
+
+actSeconds=$(( $(date -j -f "%Y-%m-%dT%H:%M:%S" ${today}T${endTime_hhmmss} "+%s") - $(date -j -f "%Y-%m-%dT%H:%M:%S" ${today}T${startTime_hhmmss} "+%s") ))
+actSeconds=$(( $actSeconds - $suspensionPeriod ))
+
+if [ $actSeconds -lt 60 ]; then
+	echo Too short time to record.
+	exit 0
+fi
+
+insertData='{startDate:new Date("'$startDateForMongo'"),endDate:new Date("'$endDateForMongo'"),setSeconds:'"$seconds"',actSeconds:'"$actSeconds"',tag:"'"$tag"'",taskTitle:"'"$startmsg"'",createdAt: new Date(new Date().getTime()+1000*60*60*9)}'
+
+insertCommand='db.'$COLLECTION_NAME'.insert('$insertData');'
+
+echo $insertCommand &gt;&gt; $OUTPUT_PATH'/mongodb_insert_query.js'
+
+
+### Insert to MongoDB ###
+
+QUERY_JS=$OUTPUT_PATH'/mongodb_insert_query.js'
+HOST_DB='localhost/what_i_did'
+
+/usr/local/bin/mongo --quiet $HOST_DB -u "metabase" -p "metabase" --authenticationDatabase="what_i_did" $QUERY_JS
+
+if [ $? -eq 0 ]; then
+	rm $QUERY_JS
+	echo Inserted.
+else
+	echo Stored locally.
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DD58FC9E-441F-4EDD-8F9C-87F760CDEE51</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>4</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>CD511EA9-12B0-47FF-AC12-DAD82D9D087D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:timermode}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>interval</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>00B448D0-B0FB-4C5D-A237-52B83069A58E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>E3475480-DD5A-4091-9B8B-4233215A7342</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/Applications/Metabase/update_mongo_performance.sh</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5F777B9B-6636-4487-B011-923ECCF94EAC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>5</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>A41BF65D-BE28-47C7-B33F-56E156503116</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Make insert script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7601526D-1E24-43C2-9643-EFC44096D8CB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/sh
+
+COLLECTION_NAME='what_i_did'
+OUTPUT_PATH='/Users/aa370353/docker/metabase_mongodb/alpine'
+
+if [ $startTime = $endTime ]; then
+	echo Too short time to record.
+	exit 0
+fi
+
+insertData='{startDate:new Date("'$today'T'$startTime':00"),endDate:new Date("'$today'T'$endTime':00"),setSeconds:'"$seconds"',tag:"'"$tag"'",taskTitle:"'"$startmsg"'",createdAt: new Date()}'
+insertCommand='db.'$COLLECTION_NAME'.insert('$insertData');'
+
+echo $insertCommand &gt;&gt; $OUTPUT_PATH'/mongodb_insert_query.txt'
+
+if [ $? -eq 0 ]; then
+	echo Success
+else
+	echo Failure
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>91D2FB29-7164-4509-93E0-7FCC2E46907D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>4</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>7952A7B5-50DC-4903-8CB9-3836B464573B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:timermode}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>interval</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>72EBE301-702F-4D06-A169-279A4016D3AF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>4A7CCDE6-5632-4AE5-8C56-FD5A5A97713D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>ES put</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>3BB5BA8F-EA8C-481B-B697-D8C9A4278E21</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>host=https://search-mfp-task-vnvwylo6iteppdn5teebzxfcha.ap-northeast-1.es.amazonaws.com
+index=what_i_did
+type=$today
+doc=$endTime
+setSeconds=$seconds
+
+RES=$(curl -H "Content-Type: application/json" -X PUT "$host/$index/$type/$doc" -d'{"startDate":"'"$today"_"$startTime"'","endDate":"'"$today"_"$endTime"'","setSeconds":'"$setSeconds"',"tag":"'"$tag"'","taskTitle":"'"$startmsg"'"}')
+
+if [[ $RES == *"error"* ]]; then
+	echo esput:failed, body:$RES
+	#echo Failure
+else
+	#echo esput:succeeded, body:$RES
+	echo Success
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5D50991F-16B3-46E3-8CF7-31AE42533088</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>4</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>E8F85E69-A6E6-4236-9502-A25F314FADC8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>5667DE8F-99B0-485C-BAA1-19FAA972B099</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>00B448D0-B0FB-4C5D-A237-52B83069A58E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>960</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
+		<key>02F0141F-EFA8-4739-B4B6-E03D0EF0ABB2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>710</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>0CB59369-3F1D-4C6D-A93B-A9BB2192624E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+		<key>1DEC7314-78F3-467D-B0AC-54E0A7E8973D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+		<key>225ED2BA-4749-4CC2-AE8A-C2EB5BF008D2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>2E889EF0-5D79-4E22-91F2-677EBACAC562</key>
+		<dict>
+			<key>xpos</key>
+			<integer>850</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>37455501-885F-4023-BBBA-53765F647CBA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>3BB5BA8F-EA8C-481B-B697-D8C9A4278E21</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1190</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
+		<key>3F274EA3-54BC-440C-A0F0-2161238A73EC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>780</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>4A7CCDE6-5632-4AE5-8C56-FD5A5A97713D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1110</integer>
+			<key>ypos</key>
+			<integer>970</integer>
+		</dict>
+		<key>4BFB372B-98EC-498B-AF9C-12B3E53708A4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1290</integer>
+			<key>ypos</key>
+			<integer>440</integer>
+		</dict>
+		<key>5667DE8F-99B0-485C-BAA1-19FAA972B099</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1110</integer>
+			<key>ypos</key>
+			<integer>1190</integer>
+		</dict>
+		<key>593BEDD0-90D3-44EB-A8FA-B207543286BD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>5A2F3E19-C21B-4CE3-8399-D0FF25651BDF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+		<key>5D50991F-16B3-46E3-8CF7-31AE42533088</key>
+		<dict>
+			<key>xpos</key>
+			<integer>950</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
+		<key>5F777B9B-6636-4487-B011-923ECCF94EAC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+		<key>6E14105B-E7D7-432A-B6BC-446CC5277B57</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>72EBE301-702F-4D06-A169-279A4016D3AF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>860</integer>
+		</dict>
+		<key>7601526D-1E24-43C2-9643-EFC44096D8CB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1190</integer>
+			<key>ypos</key>
+			<integer>830</integer>
+		</dict>
+		<key>7952A7B5-50DC-4903-8CB9-3836B464573B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1110</integer>
+			<key>ypos</key>
+			<integer>860</integer>
+		</dict>
+		<key>8B532EA1-F46D-4AD3-9E34-BAFB8E6ADF71</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>90273618-B4E4-46A9-B93D-CC7D2DE161E6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>91D2FB29-7164-4509-93E0-7FCC2E46907D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>950</integer>
+			<key>ypos</key>
+			<integer>830</integer>
+		</dict>
+		<key>A41BF65D-BE28-47C7-B33F-56E156503116</key>
+		<dict>
+			<key>xpos</key>
+			<integer>950</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
+		<key>A8CE9547-0178-4C91-82B0-1C66E66A7711</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>370</integer>
+		</dict>
+		<key>C57B2C9B-A826-49D4-8AF2-B5A4311D15BD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>CC9CE089-264F-43E7-815A-DBA6B33C8A24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+		<key>CD511EA9-12B0-47FF-AC12-DAD82D9D087D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1210</integer>
+			<key>ypos</key>
+			<integer>470</integer>
+		</dict>
+		<key>DD58FC9E-441F-4EDD-8F9C-87F760CDEE51</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1030</integer>
+			<key>ypos</key>
+			<integer>450</integer>
+		</dict>
+		<key>E3475480-DD5A-4091-9B8B-4233215A7342</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1190</integer>
+			<key>ypos</key>
+			<integer>550</integer>
+		</dict>
+		<key>E50ABA29-CC92-4FEE-BC19-6764918F242F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>960</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>E8F85E69-A6E6-4236-9502-A25F314FADC8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1100</integer>
+			<key>ypos</key>
+			<integer>1080</integer>
+		</dict>
+		<key>EEB21CDB-A28C-4F3F-BAC3-1CEAAB02A1FD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>FABD6928-C2A2-4630-80FD-E4DCC5186EEB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>960</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/r1cc4rdo/alfred-workflows</string>
+</dict>
+</plist>

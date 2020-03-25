@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>689A0F34-56BE-4455-ABD4-E09736BE88EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>61263EE3-676A-420B-AD1C-1842DC2CA04D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>51B2B96D-AE94-4D19-A81D-FC31D2DD3D28</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>95174EFF-4B6F-4AA7-968F-0EF31483B480</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>689A0F34-56BE-4455-ABD4-E09736BE88EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A92501C5-A5C6-425B-8A6E-1C18C3173C12</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>86D22256-F2D6-4638-BE01-90F1C949B8DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A92501C5-A5C6-425B-8A6E-1C18C3173C12</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A675465-2123-4A41-B383-671467785084</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Keisuke Igarashi</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Metabase Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="{query}"
+INTERVAL=1
+MAX_RETRY=10
+
+if [[ $query == 'starting' ]]; then
+
+	for i in $(seq 1 $MAX_RETRY); do
+		if [ "`echo $(/usr/local/bin/docker ps -f name=mongodb) | grep mongodb`" ]; then
+			break
+		else
+			sleep $INTERVAL &amp;&amp; /usr/bin/false
+		fi
+	done
+
+	if [ $? -eq 0 ]; then
+		echo 'Docker : Starting'
+	else
+		echo '[warn] no response from docker'
+	fi
+
+elif [[ $query == 'stopped' ]]; then
+	
+	for i in $(seq 1 $MAX_RETRY); do
+		if [ "`echo $(/usr/local/bin/docker ps -f name=metabase) | grep metabase`" ]; then
+			sleep $INTERVAL &amp;&amp; /usr/bin/false
+		else
+			break
+		fi
+	done
+	
+	if [ $? -eq 0 ]; then
+		echo 'Docker : Stopped'
+	else
+		echo '[warn] docker is still alive'
+	fi
+
+elif [[ $query == 'update' ]]; then
+	echo 'Metabase : Starting update'
+
+fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>689A0F34-56BE-4455-ABD4-E09736BE88EC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Metabase Server</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>61263EE3-676A-420B-AD1C-1842DC2CA04D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>51B2B96D-AE94-4D19-A81D-FC31D2DD3D28</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>mt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ "`echo $(/usr/local/bin/docker ps -f name=metabase) | grep metabase`" ]; then
+	arg='stopped'
+	title='Switch Metabase DOWN'
+	sub='metabase server is up'
+	update_item="&lt;item uid='fbtt' arg='update' valid='yes'&gt;&lt;title&gt;Update Metabase DB&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;/item&gt;"
+else
+	arg='starting'
+	title='Switch Metabase UP'
+	sub='metabase server is down'
+	update_item=''
+fi
+
+echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;&lt;item uid='fbtt' arg='$arg' valid='yes'&gt;&lt;title&gt;$title&lt;/title&gt;&lt;subtitle&gt;$sub&lt;/subtitle&gt;&lt;/item&gt;$update_item&lt;/items&gt;"
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Toggle metabase up/down</string>
+				<key>title</key>
+				<string>Metabase toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>95174EFF-4B6F-4AA7-968F-0EF31483B480</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="{query}"
+
+if [[ $query == 'update' ]]; then
+		## update performance collection
+		/Applications/Metabase/update_mongo_performance.sh
+else
+	if [ "`echo $(/usr/local/bin/docker ps -f name=metabase) | grep metabase`" ]; then
+		/usr/local/bin/docker-compose -f /Applications/Metabase/docker-compose.yml stop
+	else
+		## start metabase server
+		/Applications/Metabase/build.sh
+		
+		## update performance collection
+		/Applications/Metabase/update_mongo_performance.sh
+	fi
+fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A92501C5-A5C6-425B-8A6E-1C18C3173C12</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>86D22256-F2D6-4638-BE01-90F1C949B8DB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>5A675465-2123-4A41-B383-671467785084</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>51B2B96D-AE94-4D19-A81D-FC31D2DD3D28</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>5A675465-2123-4A41-B383-671467785084</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
+		<key>61263EE3-676A-420B-AD1C-1842DC2CA04D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>689A0F34-56BE-4455-ABD4-E09736BE88EC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>86D22256-F2D6-4638-BE01-90F1C949B8DB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
+		<key>95174EFF-4B6F-4AA7-968F-0EF31483B480</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>A92501C5-A5C6-425B-8A6E-1C18C3173C12</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

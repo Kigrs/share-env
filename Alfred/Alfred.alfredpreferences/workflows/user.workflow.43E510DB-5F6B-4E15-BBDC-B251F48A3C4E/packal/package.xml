@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Simple Reminders</name>
+  <version>0.8.1</version>
+  <bundle>com.github.jimo1001.alfred-reminders-workflow</bundle>
+  <updated>1481342658</updated>
+  <file>alfred-reminders-workflow-0.8.1.alfredworkflow</file>
+</workflow>
