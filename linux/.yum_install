@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yum update
+
+yum install bash
+
+yum install b4b4r07/tap/gomi
+yum install peco
+yum install fzf
+yum install gh
+yum install speedtest-cli
+
