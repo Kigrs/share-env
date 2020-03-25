@@ -7,7 +7,7 @@ SRCH_DPTH=5
 echo -e "# Make symlink by folloing command."
 
 echo -e "\n- New files -"
-for files in $(basename $(find $dotfiles_dir -mindepth 1 -maxdepth 1 -not -iwholename '*/.git*' -not -iwholename '*/dotfiles/setup.sh')) ; do
+for files in $(basename $(find $dotfiles_dir -mindepth 1 -maxdepth 3 -not -iwholename '*/.git*' -not -iwholename '*/dotfiles/setup.sh')) ; do
     
     linkfile="$(find $home_dir -name "$files" -not -iwholename '*/.Trash/*' -not -iwholename '*/dotfiles/*' -not -iwholename '*/.local/*' -maxdepth $SRCH_DPTH 2>/dev/null)"
     if [ ! -L "$linkfile" ];  then 
@@ -18,7 +18,7 @@ for files in $(basename $(find $dotfiles_dir -mindepth 1 -maxdepth 1 -not -iwhol
 done
 
 echo -e "\n- Already symlink exists -"
-for files in $(basename $(find $dotfiles_dir -mindepth 1 -maxdepth 1 -not -iwholename '*/.git*')) ; do
+for files in $(basename $(find $dotfiles_dir -mindepth 1 -maxdepth 3 -not -iwholename '*/.git*')) ; do
     
     linkfile="$(find $home_dir -name "$files" -type l -maxdepth $SRCH_DPTH 2>/dev/null)"
     #[ -n "$linkfile" ] &&  echo -e "\033[0m$(ls -lG $linkfile)\033[m"
