@@ -21,7 +21,7 @@
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
 	<key>Command</key>
-	<string>/usr/local/bin/bash</string>
+	<string></string>
 	<key>CommandSelection</key>
 	<false/>
 	<key>CopyLastNewline</key>
@@ -1963,7 +1963,7 @@ Maximize Active Pane</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{509, 573}</string>
+		<string>{405, 652}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>EDDAEBDD-CA6F-4F55-BEF2-7B9BB5F58B64</string>
@@ -2821,7 +2821,7 @@ Maximize Active Pane</string>
 	<key>ThreeFingerEmulates</key>
 	<false/>
 	<key>TimeBetweenBlinks</key>
-	<real>0.5</real>
+	<real>0.25</real>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>Use background pattern indicator</key>
