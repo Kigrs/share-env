@@ -13,10 +13,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 
 # Prompt
-export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_update'
+export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status'
 
 PRE_PROMPT_DATE=$(date "+%s")
-function _ps1_update () {
+function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]; then
     PRE_PROMPT_DATE=$(date "+%s") 
     GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/" | tr -d "\(\) ")
