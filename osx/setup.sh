@@ -21,7 +21,7 @@ for files in $(basename $(find $share_env_dir -name "\.*" -mindepth 1 -maxdepth 
     linkfile="$(find $home_dir -name "$files" -not -iwholename '*/.Trash/*' -not -iwholename '*/share-env/*' -not -iwholename '*/.local/*' -maxdepth $SRCH_DPTH 2>/dev/null)"
     if [ ! -L "$linkfile" ];  then 
       [ -z "$linkfile" ] && linkfile="<anywhere>" 
-      echo -e "\033[1mln -si $share_env_dir/$files $linkfile\033[m"
+      echo -e "\033[1mln -sF $share_env_dir/$files $linkfile\033[m"
     fi
 done
 
