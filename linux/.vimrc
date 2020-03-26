@@ -1,1 +1,1 @@
-/home/ec2-user/dotfiles/osx/.vimrc
+/home/ec2-user/share-env/osx/.vimrc
