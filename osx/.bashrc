@@ -41,7 +41,7 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias vr='vim -R'
 function v. () {
-    local file=$(find ~/dotfiles/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco)
+    local file=$(find ~/share-env/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco)
     [ -z "$file" ] && return 0
     vim $file
     [ -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
