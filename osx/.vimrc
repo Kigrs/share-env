@@ -149,7 +149,7 @@ set statusline+=%=
 " file encoding
 set statusline+=[ENC=%{&fileencoding}]
 " 現在行数/全行数
-set statusline+=[LOW=%l/%L]
+set statusline+=[ROW=%l/%L]
 
 " マウスクリックを無効化する
 set mouse=
