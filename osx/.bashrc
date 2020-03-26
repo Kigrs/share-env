@@ -50,6 +50,7 @@ function v. () {
 
 alias py='python'
 alias py3='python3'
+alias pyc-clear='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
 alias dk='docker'
 alias dkc='docker-compose'
