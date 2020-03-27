@@ -241,7 +241,7 @@ else
 		
 		find $DIR -type f -maxdepth 1 2>/dev/null | while read file
 		do 
-			tput us; tput bold; echo -en "* "; ls -lG "$file"; tput sgr0
+			tput smul; tput bold; echo -en "* "; ls -lG "$file"; tput sgr0
 			if [ "`file --mime "$file" | grep binary`" ]; then
 				echo "Notice: '$(basename "$file")' is a binary."
 			else
