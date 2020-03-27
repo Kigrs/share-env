@@ -241,11 +241,12 @@ else
 		
 		find $DIR -type f -maxdepth 1 2>/dev/null | while read file
 		do 
-			echo -en "* "; ls -l "$file"
+			tput us; tput bold; echo -en "* "; ls -lG "$file"; tput sgr0
 			if [ "`file --mime "$file" | grep binary`" ]; then
 				echo "Notice: '$(basename "$file")' is a binary."
 			else
-				head -n $N "$file";
+				#head -n $N "$file";
+				bat -pp -r:$N "$file";
 				[ `wc -l < "$file"` -gt $N ] && echo "..." || echo "<<EOF>>"
 			fi
 			echo;
