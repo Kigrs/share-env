@@ -23,7 +23,25 @@ alias lla='ls -laG'
 alias c='clear'
 alias m='mkdir'
 alias o='open'
-alias oa='open -a'
+#alias oa='open -a'
+function oa () {
+    # oa sub testfile
+    # oa testfile
+    local app
+    if [ -z "$1" ]; then
+        echo "Missing filename" && return 0
+    elif [ ! -r "$1" ]; then
+        [ ! -r "$2" ] && echo "$2: No such file or directory" && return 0
+        app=$(find /Applications/ -type d -name "*.app" -mindepth 1 -maxdepth 1 | fzf --query="/applications//$1.app" --select-1)
+        [ -z "$app" ] && return 0
+        open -a "$app" "${@:2}"
+    else
+        app=$(find /Applications/ -type d -name "*.app" -mindepth 1 -maxdepth 1 | fzf --select-1)
+        [ -z "$app" ] && return 0
+        open -a "$app" "${@:1}"
+    fi
+    return 0
+}
 alias f='open .'
 alias t='tree -CN'
 alias ta='tree -CaN -I ".git"'
@@ -41,7 +59,7 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias vr='vim -R'
 function v. () {
-    local file=$(find ~/share-env/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco)
+    local file=$(find ~/share-env/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco --select-1 )
     [ -z "$file" ] && return 0
     vim $file
     [ -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
