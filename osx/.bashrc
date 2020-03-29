@@ -16,15 +16,16 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 alias ls='ls -G'
-alias ll='ls -lG'
+alias ll='ls -lhG'
 alias la='ls -aG'
-alias lla='ls -laG'
+alias lla='ls -lahG'
 
 alias c='clear'
 alias m='mkdir'
 alias o='open'
 #alias oa='open -a'
 function oa () {
+    # oa [Application] filenames
     # oa sub testfile
     # oa testfile
     local app
@@ -241,7 +242,7 @@ else
 		
 		find $DIR -type f -maxdepth 1 2>/dev/null | while read file
 		do 
-			tput smul; tput bold; echo -en "* "; ls -lG "$file"; tput sgr0
+			tput smul; tput bold; echo -en "* "; ls -lhG "$file"; tput sgr0
 			if [ "`file --mime "$file" | grep binary`" ]; then
 				echo "Notice: '$(basename "$file")' is a binary."
 			else

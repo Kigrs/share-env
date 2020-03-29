@@ -41,11 +41,11 @@ export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]${P_S}\[${GIT_CLR}\]${GIT_PS1}\[\e[0m\]${
 #>> $ 
 
 #History
-export HISTTIMEFORMAT='%d_%H:%M '
+export HISTTIMEFORMAT='%d/%H:%M '
 export HISTSIZE=100000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
-export HISTIGNORE='a:p:pwd:pc:d:h:hi:hh:his:history:ls:ll:la:lla:c:t:ta'
+export HISTIGNORE='a:p:pwd:pc:hi:hh:his:history:ls:ll:la:lla:c:t:ta'
 
 # Bash option
 shopt -s globstar

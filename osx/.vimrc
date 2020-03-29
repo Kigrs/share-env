@@ -3,10 +3,20 @@
 set fenc=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
-" バックアップファイルを作らない
+
+" swpファイル出力無効
+"set noswapfile
+" swpファイル出力先
+set directory=~/.vim/swp
+set swapfile
+" バックアップファイル出力無効
 set nobackup
-" スワップファイルを作らない
-set noswapfile
+" undoファイル出力無効
+"set noundofile
+" undoの履歴を残して、ファイルを閉じた後でもundoができるようにする
+set undodir=~/.vim/undo
+set undofile
+
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -154,9 +164,6 @@ set statusline+=[ROW=%l/%L]
 " マウスクリックを無効化する
 set mouse=
 
-" undoの履歴を残して、ファイルを閉じた後でもundoができるようにする
-set undodir=~/.vim/undo
-set undofile
 
 " J/L で行頭/行末へ移動
 noremap <S-j>   ^
