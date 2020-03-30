@@ -222,6 +222,13 @@ else
 fi
 }
 
+function cdx () {
+    local target=$(cat /tmp/PWD/* | peco)
+    [ -n "$target" ] && cd "$target" && pwd
+    return 0
+}
+
+
 function line() {
     printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"
 }
@@ -255,4 +262,7 @@ else
 	done
 fi
 }
+
+
+
 

@@ -18,7 +18,8 @@ export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status'
 PRE_PROMPT_DATE=$(date "+%s")
 function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]; then
-    PRE_PROMPT_DATE=$(date "+%s") 
+    echo "$PWD" > /tmp/PWD/${TTY}
+    PRE_PROMPT_DATE=$(date "+%s")
     GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/" | tr -d "\(\) ")
     if [ -n "$GIT_PS1" ]; then
         P_S="("
@@ -69,3 +70,9 @@ export BAT_THEME="Nord"
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
+
+# tty PWD
+mkdir -p /tmp/PWD
+export TTY=$(basename $(tty))
+echo "$PWD" > /tmp/PWD/${TTY}
+
