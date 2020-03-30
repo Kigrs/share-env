@@ -240,7 +240,7 @@ else
 		[ -z "$DIR" ] && DIR="."
 		echo -e "MAX_LINE:\t$N\nSEARCH_DIR:\t$DIR\n\n"
 		
-		find $DIR -type f -maxdepth 1 2>/dev/null | while read file
+		find $DIR -type f -maxdepth 1 2>/dev/null | sort | while read file
 		do 
 			tput smul; tput bold; echo -en "* "; ls -lhG "$file"; tput sgr0
 			if [ "`file --mime "$file" | grep binary`" ]; then
