@@ -6,4 +6,4 @@ automatic_backups
 *.swp
 
 **/Alfred.alfredpreferences/workflows/**/tmp/
-**/Alfred.alfredpreferences/workflows/**/display_login.log
+display_login.log
