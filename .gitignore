@@ -2,3 +2,6 @@
 automatic_backups
 **/.vim/undo/*
 !**/.vim/undo/.gitkeep
+.netrwhist
+
+**/Alfred.alfredpreferences/workflows/**/tmp/
