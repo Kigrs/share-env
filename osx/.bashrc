@@ -223,7 +223,7 @@ fi
 }
 
 function cdx () {
-    local target=$(ls /tmp/PWD/* | grep -v "$TTY" | xargs cat | sort | uniq | grep -v "$PWD" | peco --select-1)
+    local target=$(ls /tmp/PWD/* | grep -v "$TTY" | xargs cat | sort | uniq | grep -v "^$PWD$" | peco --select-1)
     [ -n "$target" ] && cd "$target" && pwd
     return 0
 }

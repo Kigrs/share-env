@@ -74,5 +74,4 @@ export BAT_THEME="Nord"
 # tty PWD
 mkdir -p /tmp/PWD
 export TTY=$(basename $(tty))
-#echo "$PWD" > /tmp/PWD/${TTY}
 
