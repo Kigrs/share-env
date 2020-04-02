@@ -49,9 +49,13 @@ export HISTCONTROL=ignoreboth
 export HISTIGNORE='a:p:pwd:pc:hi:hh:his:history:ls:ll:la:lla:c:t:ta'
 
 # Bash option
-shopt -s globstar
 shopt -s autocd
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s dirspell
+shopt -s dotglob
 shopt -s extglob
+shopt -s globstar
 shopt -s histverify	
 shopt -u histappend
 
