@@ -1,0 +1,38 @@
+{
+  "settingsVersion": "1.66",
+  "exclusionRules": [
+    {
+      "pattern": "https?://www.e-typing.ne.jp/*",
+      "passKeys": "hqwertyuiop@[asdfghjkl;:]zxcvbnm,./_QWERTYUIOP`{ASDFGHK+*}ZXCVBNM<>?_"
+    },
+    {
+      "pattern": "https?://typingx0.net/*",
+      "passKeys": "hqwertyuiop@[asdfghjkl;:]zxcvbnm,./_QWERTYUIOP`{ASDFGHK+*}ZXCVBNM<>?_"
+    },
+    {
+      "pattern": "https?://typing-tube.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://rootnroll.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# マッピング初期化\nunmapAll\n\n#スクロール\nmap i scrollUp\nmap k scrollDown\nmap I scrollFullPageUp\nmap K scrollFullPageDown\n#map <m-i> scrollFullPageUp\n#map <m-k> scrollFullPageDown\nmap <m-I> scrollToTop\nmap <m-K> scrollToBottom\n\n#画面内操作\nmap r reload\nmap u copyCurrentUrl\nmap o openCopiedUrlInNewTab\n\n#vimiumモード\nmap v LinkHints.activateMode\nmap V LinkHints.activateModeToOpenInNewForegroundTab\nmap <m-v> LinkHints.activateModeToOpenInNewTab\n\n#vomnibar\nmap f Vomnibar.activate\nmap F Vomnibar.activateInNewTab\n\n#画面内検索\n#map / enterFindMode\n#map <c-;> performFind\n#map <c-+> performBackwardsFind\n\n#ページ戻る/進む\nmap j goBack\nmap l goForward\n\n#タブ操作\nmap t createTab\nmap T restoreTab\nmap d duplicateTab\nmap z visitPreviousTab\nmap w removeTab\n\nmap J previousTab\nmap L nextTab\n#map <m-j> previousTab\n#map <m-l> nextTab\nmap <m-j> moveTabLeft\nmap <m-l> moveTabRight\n\n#Help\nmap ? showHelp",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 230,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "# w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\ng: https://www.google.com/search?q=%s Google\ngi: https://www.google.com/search?tbm=isch&q=%s Google Images\ngm: https://www.google.com/maps?q=%s Google Maps\na: https://www.amazon.co.jp/s/?field-keywords=%s Amazon\ny: https://www.youtube.com/results?search_query=%s Youtube\n\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
