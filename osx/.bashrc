@@ -236,6 +236,12 @@ function cdx () {
     return 0
 }
 
+function cdh () {
+    local target=$(sort -u ~/.pwd_history | grep -v "^$PWD$" | peco --select-1)
+    [ -n "$target" ] && cd "$target" && pwd
+    return 0
+}
+
 
 function line() {
     printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"

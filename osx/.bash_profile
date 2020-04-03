@@ -13,13 +13,13 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 
 # Prompt
-export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status'
+export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status;'
 
 PRE_PROMPT_DATE=$(date "+%s")
 function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]; then
-    echo "$PWD" > /tmp/PWD/${TTY}
-    PRE_PROMPT_DATE=$(date "+%s")
+    _pwd_status
+    PRE_PROMPT_DATE=$(date -v+1S "+%s")
     GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/" | tr -d "\(\) ")
     if [ -n "$GIT_PS1" ]; then
         P_S="("
@@ -32,14 +32,10 @@ fi
 }
 export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]${P_S}\[${GIT_CLR}\]${GIT_PS1}\[\e[0m\]${P_E}\$ '
 
-#export PS1="[\[\e[1;37m\]\h:\[\e[m\]\W]\$ "
-#>> [ip-172-31-41-207:~]$ 
-#export PS1="\[\e[1;34m\][\D{%H:%M} \u@\h \W]\[\e[m\]\n\$ "
-#>> [12:53 ec2-user@ip-172-31-41-207 ~]
-#>> $ 
-#export PS1="\[\e[1;34m\][\D{%H:%M}] \u@\h : \w\[\e[m\]\n\$ "
-#>> [12:50] ec2-user@ip-172-31-41-207 : ~/expose_attackers_location
-#>> $ 
+function _pwd_status () {
+    echo "$PWD" > /tmp/PWD/${TTY}
+    [ "$PRI_PWD" != "$PWD" ] && PRI_PWD="$PWD" && echo "$PWD" >> ~/.pwd_history
+}
 
 #History
 export HISTTIMEFORMAT='%d/%H:%M '
@@ -69,13 +65,13 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 ## bat
 export BAT_THEME="Nord"
 
+# cdx command
+mkdir -p /tmp/PWD
+export TTY=$(basename $(tty))
+
 # Alias & Functions
 [ -f ~/.bashrc ] && . ~/.bashrc
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
-
-# tty PWD
-mkdir -p /tmp/PWD
-export TTY=$(basename $(tty))
 
