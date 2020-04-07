@@ -966,10 +966,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f2",
-                                        "modifiers": [
-                                            "fn"
-                                        ]
+                                        "key_code": "f2"
                                     }
                                 ],
                                 "type": "basic"
