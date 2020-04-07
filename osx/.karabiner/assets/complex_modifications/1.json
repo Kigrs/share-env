@@ -1320,6 +1320,40 @@
 			]
 		},
 		{
+			"description": "Control+F to F2 (on Office + with Touch Bar)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "f",
+						"modifiers": {
+							"mandatory": [
+								"left_control"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "f2",
+							"modifiers": [
+								"fn"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.microsoft\\.Word$",
+								"^com\\.microsoft\\.Excel$",
+								"^com\\.microsoft\\.Powerpoint$"
+							]
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
 			"description": "Use Return as Open and Use F2 as Rename",
 			"manipulators": [
 				{

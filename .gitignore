@@ -5,5 +5,9 @@ automatic_backups
 .netrwhist
 *.swp
 
+# Alfred
 **/Alfred.alfredpreferences/workflows/**/tmp/
 display_login.log
+
+# Karabiner
+karabiner.json
