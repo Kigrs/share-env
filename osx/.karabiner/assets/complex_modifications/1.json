@@ -1,1826 +1,1826 @@
 {
-	"title": "Personal Setting (by Keisuke)",
-	"rules": [
-		{
-			"description": "Control+Option+J/L to Control+left/right",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "j",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_option"
-							]
-						}
-					},
-					"to": {
-						"key_code": "left_arrow",
-						"modifiers": [
-							"left_control"
-						]
-					}
-				},
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "l",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_option"
-							]
-						}
-					},
-					"to": {
-						"key_code": "right_arrow",
-						"modifiers": [
-							"left_control"
-						]
-					}
-				}
-			]
-		},
-		{
-			"description": "Control+M to Control+K",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "m",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "k",
-							"modifiers": [
-								"left_control"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+IJKL to Arrow_key (Simple Arrow Controler)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "i",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "up_arrow"
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "k",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "down_arrow"
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "j",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "left_arrow"
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "l",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "right_arrow"
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+Q/W to MouseClick",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "q",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"pointing_button": "button1"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "w",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"pointing_button": "button2"
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Double tap left_option to escape",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "left_option"
-					},
-					"to": [
-						{
-							"key_code": "escape"
-						},
-						{
-							"set_variable": {
-								"name": "press_left_option_key",
-								"value": 0
-							}
-						}
-					],
-					"conditions": [
-						{
-							"type": "variable_if",
-							"name": "press_left_option_key",
-							"value": 1
-						}
-					]
-				},
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "left_option"
-					},
-					"to": [
-						{
-							"set_variable": {
-								"name": "press_left_option_key",
-								"value": 1
-							}
-						},
-						{
-							"key_code": "left_option"
-						}
-					],
-					"to_delayed_action": {
-						"to_if_invoked": [
-							{
-								"set_variable": {
-									"name": "press_left_option_key",
-									"value": 0
-								}
-							}
-						],
-						"to_if_canceled": [
-							{
-								"set_variable": {
-									"name": "press_left_option_key",
-									"value": 0
-								}
-							}
-						]
-					},
-					"conditions": [
-						{
-							"type": "variable_if",
-							"name": "press_left_option_key",
-							"value": 0
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+N to Escape (on Console application)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "n",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "escape"
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					],
-					"type": "basic",
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.apple\\.Terminal$",
-								"^com\\.googlecode\\.iterm2$"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+N to Escape",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "n",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "escape"
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+Z/Control+Shift+Z to Command+Z/Command+Shift+Z",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "z",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "z",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "z",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "z",
-						"modifiers": [
-							"left_command",
-							"left_shift"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+X to Command+X",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "x",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "x",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+P to Command+X",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "p",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "x",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+C to Command+C",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "c",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "c",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+/ to \\",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "slash",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "international3",
-						"modifiers": [
-							"left_option"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+V to Command+V",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "v",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "v",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Double tap left_control to command+Z",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "left_control"
-					},
-					"to": [
-						{
-							"key_code": "z",
-							"modifiers": [
-								"left_command"
-							]
-						},
-						{
-							"set_variable": {
-								"name": "press_left_control_key",
-								"value": 0
-							}
-						}
-					],
-					"conditions": [
-						{
-							"type": "variable_if",
-							"name": "press_left_control_key",
-							"value": 1
-						}
-					]
-				},
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "left_control"
-					},
-					"to": [
-						{
-							"set_variable": {
-								"name": "press_left_control_key",
-								"value": 1
-							}
-						},
-						{
-							"key_code": "left_control"
-						}
-					],
-					"to_delayed_action": {
-						"to_if_invoked": [
-							{
-								"set_variable": {
-									"name": "press_left_control_key",
-									"value": 0
-								}
-							}
-						],
-						"to_if_canceled": [
-							{
-								"set_variable": {
-									"name": "press_left_control_key",
-									"value": 0
-								}
-							}
-						]
-					},
-					"conditions": [
-						{
-							"type": "variable_if",
-							"name": "press_left_control_key",
-							"value": 0
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+U/O to Copy/Paste",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "u",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "c",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "o",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "v",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Swap Command+Enter for Command+Shift+Enter (on iTerm2)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_command"
-							]
-						}
-					},
-					"to": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_command",
-								"left_shift"
-							]
-						}
-					},
-					"type": "basic",
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.googlecode\\.iterm2$"
-							]
-						}
-					]
-				},
-				{
-					"from": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_command",
-								"left_shift"
-							]
-						}
-					},
-					"to": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_command"
-							]
-						}
-					},
-					"type": "basic",
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.googlecode\\.iterm2$"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+; to Enter",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": {
-						"key_code": "return_or_enter"
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+Y to drag one word",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "y",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option",
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Option+QuotationMark to surround one word",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "7",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "7",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "7",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "2",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "2",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "2",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "open_bracket",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "open_bracket",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "open_bracket",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Option+Parenthesis to surround one word",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "8",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "8",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "9",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "close_bracket",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "close_bracket",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "backslash",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "close_bracket",
-						"modifiers": {
-							"mandatory": [
-								"left_option"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "close_bracket"
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "backslash"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "comma",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "comma",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "period",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "9",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "8",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "9",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "backslash",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "close_bracket",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "backslash",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "backslash",
-						"modifiers": {
-							"mandatory": [
-								"left_option"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "close_bracket"
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "backslash"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "period",
-						"modifiers": {
-							"mandatory": [
-								"left_option",
-								"left_shift"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "comma",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_option"
-							]
-						},
-						{
-							"key_code": "period",
-							"modifiers": [
-								"left_shift"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Fn+かな/Fn+Command to Back/Forward (on Browser)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "japanese_kana",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "left_arrow",
-							"modifiers": [
-								"left_command"
-							]
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^org\\.mozilla\\.firefox$",
-								"^com\\.google\\.Chrome$",
-								"^com\\.apple\\.Safari$"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "right_command",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "right_arrow",
-							"modifiers": [
-								"left_command"
-							]
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^org\\.mozilla\\.firefox$",
-								"^com\\.google\\.Chrome$",
-								"^com\\.apple\\.Safari$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Shift+F to Shift+F+英数 (on Browser)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "f",
-						"modifiers": {
-							"mandatory": [
-								"left_shift"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "f",
-							"modifiers": [
-								"left_shift"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^org\\.mozilla\\.firefox$",
-								"^com\\.google\\.Chrome$",
-								"^com\\.apple\\.Safari$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+H to Delete (on Office)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "h",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "delete_or_backspace"
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.microsoft\\.Word$",
-								"^com\\.microsoft\\.Excel$",
-								"^com\\.microsoft\\.Powerpoint$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+F to F2 (on Office)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "f",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "f2"
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.microsoft\\.Word$",
-								"^com\\.microsoft\\.Excel$",
-								"^com\\.microsoft\\.Powerpoint$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+F to F2 (on Office + with Touch Bar)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "f",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "f2",
-							"modifiers": [
-								"fn"
-							]
-						}
-					],
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.microsoft\\.Word$",
-								"^com\\.microsoft\\.Excel$",
-								"^com\\.microsoft\\.Powerpoint$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Use Return as Open and Use F2 as Rename",
-			"manipulators": [
-				{
-					"conditions": [
-						{
-							"bundle_identifiers": [
-								"^com\\.apple\\.finder$"
-							],
-							"type": "frontmost_application_if"
-						}
-					],
-					"from": {
-						"key_code": "f2"
-					},
-					"to": [
-						{
-							"key_code": "return_or_enter"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"conditions": [
-						{
-							"bundle_identifiers": [
-								"^com\\.apple\\.finder$"
-							],
-							"type": "frontmost_application_if"
-						}
-					],
-					"from": {
-						"key_code": "return_or_enter"
-					},
-					"to": [
-						{
-							"key_code": "o",
-							"modifiers": [
-								"right_command"
-							]
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"conditions": [
-						{
-							"bundle_identifiers": [
-								"^com\\.apple\\.finder$"
-							],
-							"type": "frontmost_application_if"
-						}
-					],
-					"from": {
-						"key_code": "f",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "return_or_enter"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"conditions": [
-						{
-							"bundle_identifiers": [
-								"^com\\.apple\\.finder$"
-							],
-							"type": "frontmost_application_if"
-						}
-					],
-					"from": {
-						"key_code": "semicolon",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							],
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "o",
-							"modifiers": [
-								"right_command"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Command+SPACE to Command+SPACE+英数",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "spacebar",
-						"modifiers": {
-							"mandatory": [
-								"right_command"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "spacebar",
-							"modifiers": [
-								"right_command"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				},
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "spacebar",
-						"modifiers": {
-							"mandatory": [
-								"left_command"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "spacebar",
-							"modifiers": [
-								"left_command"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Command+SPACE to Control+,+英数",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "spacebar",
-						"modifiers": {
-							"mandatory": [
-								"right_command"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "comma",
-							"modifiers": [
-								"left_control"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				},
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "spacebar",
-						"modifiers": {
-							"mandatory": [
-								"left_command"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "comma",
-							"modifiers": [
-								"left_control"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+, to Control+,+英数",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"key_code": "comma",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "comma",
-							"modifiers": [
-								"left_control"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "F,Jの同時押しでAlfred起動",
-			"manipulators": [
-				{
-					"type": "basic",
-					"from": {
-						"simultaneous": [
-							{
-								"key_code": "f"
-							},
-							{
-								"key_code": "j"
-							}
-						],
-						"modifiers": {
-							"optional": [
-								"any"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "spacebar",
-							"modifiers": [
-								"left_command"
-							]
-						},
-						{
-							"key_code": "japanese_eisuu"
-						}
-					]
-				}
-			]
-		},
-		{
-			"description": "Control+jk/kl to Control+left/right",
-			"manipulators": [
-				{
-					"type": "basic",
-					"parameters": {
-						"basic.simultaneous_threshold_milliseconds": 100
-					},
-					"from": {
-						"simultaneous": [
-							{
-								"key_code": "k"
-							},
-							{
-								"key_code": "j"
-							}
-						],
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "left_arrow",
-						"modifiers": [
-							"left_control"
-						]
-					}
-				},
-				{
-					"type": "basic",
-					"parameters": {
-						"basic.simultaneous_threshold_milliseconds": 100
-					},
-					"from": {
-						"simultaneous": [
-							{
-								"key_code": "k"
-							},
-							{
-								"key_code": "l"
-							}
-						],
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "right_arrow",
-						"modifiers": [
-							"left_control"
-						]
-					}
-				}
-			]
-		},
-		{
-			"description": "Control+Delete to Command+Delete",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "delete_or_backspace",
-						"modifiers": {
-							"mandatory": [
-								"left_control"
-							]
-						}
-					},
-					"to": {
-						"key_code": "delete_or_backspace",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+Shift+H to Command+Delete (on Finder)",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "h",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_shift"
-							]
-						}
-					},
-					"to": {
-						"key_code": "delete_or_backspace",
-						"modifiers": [
-							"left_command"
-						]
-					},
-					"conditions": [
-						{
-							"type": "frontmost_application_if",
-							"bundle_identifiers": [
-								"^com\\.apple\\.finder$"
-							]
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Control+Shift+SPACE to SPACE",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "spacebar",
-						"modifiers": {
-							"mandatory": [
-								"left_control",
-								"left_shift"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "japanese_eisuu"
-						},
-						{
-							"key_code": "spacebar"
-						},
-						{
-							"key_code": "japanese_kana"
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Fn+Arrow_Up/Down to Volume_increment/decrement",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "up_arrow",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "volume_increment"
-						}
-					],
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "down_arrow",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": [
-						{
-							"key_code": "volume_decrement"
-						}
-					],
-					"type": "basic"
-				}
-			]
-		},
-		{
-			"description": "Fn+Arrow_Left/Right to Brightness_down/up",
-			"manipulators": [
-				{
-					"from": {
-						"key_code": "left_arrow",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": {
-						"key_code": "apple_display_brightness_decrement"
-					},
-					"type": "basic"
-				},
-				{
-					"from": {
-						"key_code": "right_arrow",
-						"modifiers": {
-							"mandatory": [
-								"fn"
-							]
-						}
-					},
-					"to": {
-						"key_code": "apple_display_brightness_increment"
-					},
-					"type": "basic"
-				}
-			]
-		}
-	]
+    "title": "Personal Setting (by Keisuke)",
+    "rules": [
+        {
+            "description": "Control+Option+J/L to Control+left/right",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "left_arrow",
+                        "modifiers": [
+                            "left_control"
+                        ]
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "right_arrow",
+                        "modifiers": [
+                            "left_control"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Control+M to Control+K",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "k",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+IJKL to Arrow_key (Simple Arrow Controler)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "i",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "up_arrow"
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "down_arrow"
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "left_arrow"
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "right_arrow"
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+Q/W to MouseClick",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "q",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "pointing_button": "button1"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "pointing_button": "button2"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Double tap left_option to escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_option"
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        },
+                        {
+                            "set_variable": {
+                                "name": "press_left_option_key",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "press_left_option_key",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_option"
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "press_left_option_key",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
+                    "to_delayed_action": {
+                        "to_if_invoked": [
+                            {
+                                "set_variable": {
+                                    "name": "press_left_option_key",
+                                    "value": 0
+                                }
+                            }
+                        ],
+                        "to_if_canceled": [
+                            {
+                                "set_variable": {
+                                    "name": "press_left_option_key",
+                                    "value": 0
+                                }
+                            }
+                        ]
+                    },
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "press_left_option_key",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+N to Escape (on Console application)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ],
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.googlecode\\.iterm2$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+N to Escape",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+Z/Control+Shift+Z to Command+Z/Command+Shift+Z",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "z",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "z",
+                        "modifiers": [
+                            "left_command",
+                            "left_shift"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+X to Command+X",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "x",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+P to Command+X",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "x",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+C to Command+C",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "c",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+/ to \\",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "slash",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "international3",
+                        "modifiers": [
+                            "left_option"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+V to Command+V",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "v",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Double tap left_control to command+Z",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "z",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        },
+                        {
+                            "set_variable": {
+                                "name": "press_left_control_key",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "press_left_control_key",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "press_left_control_key",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "key_code": "left_control"
+                        }
+                    ],
+                    "to_delayed_action": {
+                        "to_if_invoked": [
+                            {
+                                "set_variable": {
+                                    "name": "press_left_control_key",
+                                    "value": 0
+                                }
+                            }
+                        ],
+                        "to_if_canceled": [
+                            {
+                                "set_variable": {
+                                    "name": "press_left_control_key",
+                                    "value": 0
+                                }
+                            }
+                        ]
+                    },
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "press_left_control_key",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+U/O to Copy/Paste",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "c",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "o",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "v",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Swap Command+Enter for Command+Shift+Enter (on iTerm2)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_command",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_command",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+; to Enter",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "return_or_enter"
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+Y to drag one word",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "y",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Option+QuotationMark to surround one word",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "7",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "7",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "7",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "2",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "2",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "2",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "open_bracket",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "open_bracket",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Option+Parenthesis to surround one word",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "8",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "8",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "close_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "close_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "close_bracket"
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "backslash"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "comma",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "period",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "9",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "8",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "backslash",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "backslash",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "close_bracket"
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "backslash"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "comma",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "period",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Fn+かな/Fn+Command to Back/Forward (on Browser)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "japanese_kana",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "right_command",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Shift+F to Shift+F+英数 (on Browser)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+H to Delete (on Office)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.Word$",
+                                "^com\\.microsoft\\.Excel$",
+                                "^com\\.microsoft\\.Powerpoint$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+F to F2 (on Office)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f2"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.Word$",
+                                "^com\\.microsoft\\.Excel$",
+                                "^com\\.microsoft\\.Powerpoint$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+F to F2 (on Office + with Touch Bar)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f2",
+                            "modifiers": [
+                                "fn"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.Word$",
+                                "^com\\.microsoft\\.Excel$",
+                                "^com\\.microsoft\\.Powerpoint$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Use Return as Open and Use F2 as Rename",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.finder$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "f2"
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.finder$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "return_or_enter"
+                    },
+                    "to": [
+                        {
+                            "key_code": "o",
+                            "modifiers": [
+                                "right_command"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.finder$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.finder$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "o",
+                            "modifiers": [
+                                "right_command"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Command+SPACE to Command+SPACE+英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "right_command"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Command+SPACE to Control+,+英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "comma",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "comma",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+, to Control+,+英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "comma",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "F,Jの同時押しでAlfred起動",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "f"
+                            },
+                            {
+                                "key_code": "j"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control+jk/kl to Control+left/right",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 100
+                    },
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "j"
+                            }
+                        ],
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "left_arrow",
+                        "modifiers": [
+                            "left_control"
+                        ]
+                    }
+                },
+                {
+                    "type": "basic",
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 100
+                    },
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "l"
+                            }
+                        ],
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "right_arrow",
+                        "modifiers": [
+                            "left_control"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Control+Delete to Command+Delete",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "delete_or_backspace",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "delete_or_backspace",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+Shift+H to Command+Delete (on Finder)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "delete_or_backspace",
+                        "modifiers": [
+                            "left_command"
+                        ]
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.finder$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Control+Shift+SPACE to SPACE",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        },
+                        {
+                            "key_code": "spacebar"
+                        },
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Fn+Arrow_Up/Down to Volume_increment/decrement",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "up_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_increment"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "down_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_decrement"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Fn+Arrow_Left/Right to Brightness_down/up",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "apple_display_brightness_decrement"
+                    },
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "right_arrow",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "apple_display_brightness_increment"
+                    },
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
 }
