@@ -943,7 +943,7 @@
                         ]
                     },
                     {
-                        "description": "Control+F to F2 (on Office)",
+                        "description": "Control+F to F2 (on Office + with Touch Bar)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -966,7 +966,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f2"
+                                        "key_code": "f2",
+                                        "modifiers": [
+                                            "fn"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
