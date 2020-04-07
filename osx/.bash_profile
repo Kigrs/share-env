@@ -7,10 +7,11 @@ export VISUAL='vim'
 # PATH
 export PATH=~/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
-export PATH=/usr/local/bin:$PATH
 export PATH=~/Library/Python/3.7/bin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=~/Library/Python/3.7/lib/python/site-packages:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Prompt
 export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status;'
