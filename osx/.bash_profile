@@ -21,7 +21,7 @@ function _ps1_status () {
 if [ $(date "+%s") -gt $PRE_PROMPT_DATE ]; then
     _pwd_status
     PRE_PROMPT_DATE=$(date -v+1S "+%s")
-    GIT_PS1=$(echo $(__git_ps1) | gsed "s/master/mstr/" | tr -d "\(\) ")
+    GIT_PS1=$(echo $(__git_ps1) | sed "s/master/mstr/" | tr -d "\(\) ")
     if [ -n "$GIT_PS1" ]; then
         P_S="("
         P_E=")"
