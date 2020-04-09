@@ -248,33 +248,29 @@ function line() {
 }
 
 function lscat ()  {
-if [[ $@ == -h || $@ == --help ]]
-then 
-	echo -e "\nUsage: lscat [show_line_num] [dir1 dir2 ..]\n"
-else
-    local ARG_FST ARG_RST N DIR file
-	echo $@ | while read ARG_FST ARG_RST
-	do
-		[ -z $ARG_FST ] && ARG_FST=10
-		expr $ARG_FST + 1 > /dev/null 2>&1
-		if [ $? -le 1 ]; then N=$ARG_FST; DIR=$ARG_RST; else N=10; DIR=$@; fi
-		[ -z "$DIR" ] && DIR="."
-		echo -e "MAX_LINE:\t$N\nSEARCH_DIR:\t$DIR\n\n"
-		
-		find $DIR -type f -maxdepth 1 2>/dev/null | sort | while read file
-		do 
-			tput smul; tput bold; echo -en "* "; ls -lhG "$file"; tput sgr0
-			if [ "`file --mime "$file" | grep binary`" ]; then
-				echo "Notice: '$(basename "$file")' is a binary."
-			else
-				#head -n $N "$file";
-				bat -pp -r:$N "$file";
-				[ `wc -l < "$file"` -gt $N ] && echo "..." || echo "<<EOF>>"
-			fi
-			echo;
-		done 
-	done
-fi
+[[ $@ == -h || $@ == --help ]] && echo -e "\nUsage: lscat [show_line_num] [dir1 dir2 ..]\n" && return 0
+local ARG_FST ARG_RST N DIR file
+echo $@ | while read ARG_FST ARG_RST
+do
+    [ -z $ARG_FST ] && ARG_FST=10
+    expr $ARG_FST + 1 > /dev/null 2>&1
+    if [ $? -le 1 ]; then N=$ARG_FST; DIR=$ARG_RST; else N=10; DIR=$@; fi
+    [ -z "$DIR" ] && DIR="."
+    echo -e "MAX_LINE:\t$N\nSEARCH_DIR:\t$DIR\n\n"
+    
+    find $DIR -type f -maxdepth 1 2>/dev/null | sort | while read file
+    do 
+        tput smul; tput bold; echo -en "* "; ls -lhG "$file"; tput sgr0
+        if [ "`file --mime "$file" | grep binary`" ]; then
+            echo "Notice: '$(basename "$file")' is a binary."
+        else
+            #head -n $N "$file";
+            bat -pp -r:$N "$file";
+            [ `wc -l < "$file"` -gt $N ] && echo "..." || echo "<<EOF>>"
+        fi
+        echo;
+    done 
+done
 }
 
 
