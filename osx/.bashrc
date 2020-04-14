@@ -148,7 +148,7 @@ fi
 function ga () { if [ -z "$1" ]; then git add .; else git add $@; fi }
 ##commit
 alias gcm='git commit -m'
-alias gcma='git commit -ma'
+alias gcam='git commit --amend'
 
 ## unstage
 alias gus='git reset --mixed HEAD --' # [file] back to unstaged
