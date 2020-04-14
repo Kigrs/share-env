@@ -61,10 +61,12 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias vr='vim -R'
 function v. () {
-    local file=$(find ~/share-env/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco --select-1 )
+    local file lastmoddate
+    file=$(find ~/share-env/ -name ".*" -type f -maxdepth 3 -not -iwholename "*/.DS_Store" | peco --select-1)
     [ -z "$file" ] && return 0
+    lastmoddate=$(date -r $file)
     vim $file
-    [ -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
+    [ "$lastmoddate" != "`date -r $file`" -a -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
     return 0
 }
 
@@ -243,7 +245,6 @@ function cdh () {
     return 0
 }
 
-
 function line() {
     printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"
 }
@@ -273,7 +274,6 @@ do
     done 
 done
 }
-
 
 
 
