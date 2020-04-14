@@ -72,7 +72,12 @@ export TTY=$(basename $(tty))
 
 # Alias & Functions
 [ -f ~/.bashrc ] && . ~/.bashrc
-[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
 [ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
+
+# Command completion
+[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+[ -x "$(which aws_completer)" ] && complete -C $(which aws_completer) aws
+
+
 
