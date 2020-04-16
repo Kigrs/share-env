@@ -35,7 +35,7 @@ export PS1='\[\e[1;34m\][\h:\W]\[\e[m\]${P_S}\[${GIT_CLR}\]${GIT_PS1}\[\e[0m\]${
 
 function _pwd_status () {
     echo "$PWD" > /tmp/PWD/${TTY}
-    [ "$PRI_PWD" != "$PWD" ] && PRI_PWD="$PWD" && echo "$PWD" >> ~/.pwd_history
+    [ "$PRE_PWD" != "$PWD" ] && echo "$PWD" >> ~/.pwd_history && PRE_PWD="$PWD"
 }
 
 #History

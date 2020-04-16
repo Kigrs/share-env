@@ -240,7 +240,11 @@ function cdx () {
 }
 
 function cdh () {
-    local target=$(sort -u ~/.pwd_history | grep -v "^$PWD$" | peco --select-1)
+    local HOME_ESC replace restore target
+    HOME_ESC=$(echo $HOME | gsed "s/\//\\\\\//g")
+    replace="s/$HOME_ESC/~/"
+    restore="s/~/$HOME_ESC/"
+    target=$(tac ~/.pwd_history | awk '!a[$0]++' | grep -v "^$PWD$" | gsed $replace | peco --select-1 | gsed $restore)
     [ -n "$target" ] && cd "$target" && pwd
     return 0
 }

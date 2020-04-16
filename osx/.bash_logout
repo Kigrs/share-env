@@ -4,7 +4,7 @@
 rm /tmp/PWD/${TTY} 2>/dev/null
 
 # cdh commnad
-sort -u ~/.pwd_history -o ~/.pwd_history
+tmp=$(tac ~/.pwd_history | awk '!a[$0]++' | tac) && echo $tmp | tr " " "\n" > ~/.pwd_history
 
 # ssh-agent
 ssh-agent -k
