@@ -3,6 +3,7 @@
 [ -z "`declare -F | grep _ps1_status`" ] && . ~/.bash_profile && return 0
 
 alias a='alias'
+alias def='declare -f'
 alias lscmd='echo $PATH | tr : \\n | awk '\''!a[$0]++'\'' | xargs -I@ find @ -perm +111 -maxdepth 1 2>/dev/null'
 
 alias p='pwd'
@@ -72,7 +73,17 @@ function v. () {
 
 alias py='python'
 alias py3='python3'
+alias ipy='ipython'
 alias pyc-clear='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
+
+function jpy () {
+    local jnb
+    jnb=${1:-`ls | peco --select-1`}
+    [ -z "$jnb" ] && return 0
+    jupyter nbconvert --to notebook --execute $jnb \
+    --inplace --ExecutePreprocessor.timeout=-1 \
+    --debug
+}
 
 alias dk='docker'
 alias dkc='docker-compose'
