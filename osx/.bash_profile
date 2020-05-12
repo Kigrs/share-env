@@ -43,7 +43,7 @@ export HISTTIMEFORMAT='%d/%H:%M '
 export HISTSIZE=100000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
-export HISTIGNORE='a:p:pwd:pc:hi:hh:his:history:ls:ll:la:lla:c:t:ta'
+export HISTIGNORE='a:p:pwd:pc:hi:hh:his:history:ls:ll:la:lla:c:t:ta:gd:gs'
 
 # Bash option
 shopt -s autocd
