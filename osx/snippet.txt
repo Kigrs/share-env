@@ -1,0 +1,32 @@
+[python]
+# 基本のimport
+import os,sys,subprocess,shutil,asyncio,re,json
+from datetime import datetime
+from datetime import timedelta
+from datetime import timezone
+import date
+import time
+
+import boto3,requests
+
+import numpy as np
+import pandas as pd
+import torch
+
+# main文
+def main():
+    print('hoge')
+
+if __name__ == "__main__":
+    main()
+
+# ライブラリのコードを読みたい
+import inspect
+print(inspect.getsource())
+
+# 自作デコレータ
+
+
+[java]
+
+
