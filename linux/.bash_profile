@@ -54,8 +54,11 @@ shopt -s histverify
 shopt -u histappend
 
 # Git
-. /usr/share/doc/git-2.23.1/contrib/completion/git-prompt.sh
-. /usr/share/doc/git-2.23.1/contrib/completion/git-completion.bash
+#. /usr/share/doc/git-2.23.1/contrib/completion/git-prompt.sh
+#. /usr/share/doc/git-2.23.1/contrib/completion/git-completion.bash
+##. /usr/share/git-core/contrib/completion/git-prompt.sh
+source `find / -name 'git-completion.bash' 2>/dev/null`
+source `find / -name 'git-prompt.sh' 2>/dev/null`
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
