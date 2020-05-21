@@ -90,6 +90,7 @@ alias dkc='docker-compose'
 
 alias rm='gomi'
 alias speedtest='speedtest-cli --secure'
+alias stresstest='openssl speed -multi `getconf _NPROCESSORS_ONLN`'
 alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
