@@ -103,6 +103,7 @@ function ssha () {
     ssh-add $PRIVATE_KEY
 }
 alias ssh-ec2='ssha && ssh -i ~/.ssh/private.pem ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
+alias ssh-rp4='ssha && ssh -i ~/.ssh/private.pem rp4.local'
 
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
