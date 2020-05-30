@@ -95,15 +95,22 @@ alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
 function ssha () {
-    # ssha [~/.ssh/private.pem]
     local PRIVATE_KEY=${1-~/.ssh/private.pem}
     local FINGER_PRINT=$(ssh-keygen -lf $PRIVATE_KEY | cut -d\  -f2)
     [[ -n "$SSH_AGENT_PID" && -n "$(ssh-add -l | grep $FINGER_PRINT)" ]] && echo -e "Agent pid $SSH_AGENT_PID" && return 0
     [ -z "$SSH_AGENT_PID" ] && eval `ssh-agent`
     ssh-add $PRIVATE_KEY
 }
-alias ssh-ec2='ssha && ssh -i ~/.ssh/private.pem ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
-alias ssh-rp4='ssha && ssh -i ~/.ssh/private.pem rp4.local'
+alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
+alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh rp4.local || ssh kigrs.mydns.jp '
+#function ssh-rp4 () {
+#    ssha || return 0
+#    if [ -n "`arp -a | grep 'speedwifi-next.home' `" ]; then
+#        ssh rp4.local
+#    else
+#        ssh kigrs.mydns.jp
+#    fi
+#}
 
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
