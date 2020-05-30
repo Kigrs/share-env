@@ -57,8 +57,8 @@ shopt -s histverify
 shopt -u histappend
 
 # Git
-. /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-. /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+. ~/share-env/.git-prompt.sh
+. ~/share-env/.git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
