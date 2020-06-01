@@ -102,7 +102,7 @@ function ssha () {
     ssh-add $PRIVATE_KEY
 }
 alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
-alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh rp4.local || ssh kigrs.mydns.jp '
+alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh keisuke@rp4.local || ssh keisuke@kigrs.mydns.jp '
 #function ssh-rp4 () {
 #    ssha || return 0
 #    if [ -n "`arp -a | grep 'speedwifi-next.home' `" ]; then
