@@ -269,9 +269,9 @@ function cdh () {
     return 0
 }
 
-function line() {
-    printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"
-}
+alias cdp='cd $(ls -lA | grep "^d" | tr -s " " | cut -d " " -f 9 | peco --select-1)'
+
+function line() { printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"; }
 
 function lscat ()  {
 [[ $@ == -h || $@ == --help ]] && echo -e "\nUsage: lscat [show_line_num] [dir1 dir2 ..]\n" && return 0
