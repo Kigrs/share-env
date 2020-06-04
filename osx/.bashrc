@@ -269,6 +269,11 @@ function cdh () {
     return 0
 }
 
+function cdg () {
+    local GIT_REPOS="$(ghq root)/$(ghq list | peco)"
+    [ "$GIT_REPOS" = "$(ghq root)/" ] || cd $GIT_REPOS
+}
+
 alias cdp='cd $(ls -lA | grep "^d" | tr -s " " | cut -d " " -f 9 | peco --select-1)'
 
 function line() { printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"; }
