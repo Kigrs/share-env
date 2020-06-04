@@ -7,6 +7,7 @@ export VISUAL='vim'
 # PATH
 #export PATH=~/.nodebrew/current/bin:$PATH
 #export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 #export PATH=~/Library/Python/3.7/bin:$PATH
