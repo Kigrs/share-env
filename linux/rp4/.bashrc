@@ -25,7 +25,6 @@ alias lla='ls -la --color=auto'
 alias c='clear'
 alias m='mkdir'
 alias o='open'
-#alias oa='open -a'
 function oa () {
     # oa [Application] filenames
     # oa sub testfile
@@ -109,6 +108,13 @@ alias ssh-ec2='ssha && ssh -i ~/.ssh/private.pem ec2-user@$(aws ec2 describe-ins
 
 ###########################################################################################################################################################
 # Git
+
+function ghelp () {
+    local git_alias=$(alias | grep -e =.git -e =.gh)
+    local git_func=$(eval $(declare -F | grep 'declare -f g'))
+    bat -pp -l bash <(echo "$git_alias")
+    bat -pp -l bash <(echo "$git_func")
+}
 
 alias g='git'
 

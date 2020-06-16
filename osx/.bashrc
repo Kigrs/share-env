@@ -25,7 +25,6 @@ alias lla='ls -lahG'
 alias c='clear'
 alias m='mkdir'
 alias o='open'
-#alias oa='open -a'
 function oa () {
     # oa [Application] filenames
     # oa sub testfile
@@ -103,20 +102,19 @@ function ssha () {
 }
 alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
 alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh keisuke@rp4.local || ssh keisuke@kigrs.mydns.jp '
-#function ssh-rp4 () {
-#    ssha || return 0
-#    if [ -n "`arp -a | grep 'speedwifi-next.home' `" ]; then
-#        ssh rp4.local
-#    else
-#        ssh kigrs.mydns.jp
-#    fi
-#}
 
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 
 ###########################################################################################################################################################
 # Git
+
+function ghelp () {
+    local git_alias=$(alias | grep -e =.git -e =.gh)
+    local git_func=$(eval $(declare -F | grep 'declare -f g'))
+    bat -pp -l bash <(echo "$git_alias")
+    bat -pp -l bash <(echo "$git_func")
+}
 
 alias g='git'
 
