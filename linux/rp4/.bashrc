@@ -188,10 +188,13 @@ function gpl () {
     local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
     git pull origin $current_branch
 }
+alias gplm='git pull origin master'
+
 function gps () {
     local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
     git push origin $current_branch
 }
+
 function gpp () {
     local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
     git pull origin $current_branch && git push origin $current_branch
