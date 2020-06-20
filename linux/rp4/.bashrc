@@ -302,5 +302,14 @@ do
 done
 }
 
+function rp4-stream () {
+    function _is_camera_running () { [ -n "`ps aux | grep mjpg_streamer | grep -v grep`" ] && echo true || echo false; }
+    [ "`_is_camera_running`" == "true" ] && echo Your camera is already running. && return 0
+
+    local aspect fps jpeg_quality port auth
+    aspect="960x720"; fps="30"; jpeg_quality="30"; port="8081"; auth="keisuke:igarashi";
+    mjpg_streamer -i "/usr/local/lib/mjpg-streamer/input_uvc.so -d /dev/video0 -r $aspect -fps $fps -q $jpeg_quality -y -n" -o "/usr/local/lib/mjpg-streamer/output_http.so -w ./www -p $port -c $auth"
+
+}
 
 
