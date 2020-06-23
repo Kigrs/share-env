@@ -125,11 +125,20 @@ alias gbr='git branch -r'
 alias gba='git branch -a'
 ## rename
 alias gbm='git branch -m'
+
 ## delete
-alias gbd='git branch -d'
-alias gbD='git branch -D'
-alias gbdr='git push -d origin' # delete remote branch
-function gbda () { git branch -d $1; git push -d origin $1; }
+function gbd () { read -p "Delete local branch? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git branch -d $1 || echo Deletion aborted.; }
+function gbD () { read -p "Delete local branch by FORCE? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git branch -D $1 || echo Deletion aborted.; }
+function gbdr () { read -p "Delete remote branch? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git push -d origin $1 || echo Deletion aborted.; }
+function gbda () {
+read -p "Delete local & remote branch? [$1] (y/N): " yn
+if [[ $yn = [yY] ]]; then
+    git branch -d $1
+    git push -d origin $1
+else
+    echo Deletion aborted.
+fi
+}
 ## checkout
 alias gcom='git checkout master'
 function gco () {
@@ -140,7 +149,7 @@ function gco () {
     grep -v $current_branch | peco --select-1 | xargs git checkout
 }
 function gcob () {
-local branches=$(git branch)
+local branches=$(git branch | grep -v \*)
 [ -z "$branches" ] && return 1
 [ -z "$1" ] && echo "Select target branch." && return 1
 
@@ -185,20 +194,22 @@ alias grv='git revert'
 # remote
 alias gf='git fetch'
 function gpl () {
-    local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
-    git pull origin $current_branch
+    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git pull origin $pull_branch
 }
 alias gplm='git pull origin master'
 
 function gps () {
-    local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
-    git push origin $current_branch
+    local push_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git push origin $push_branch
 }
 
 function gpp () {
-    local current_branch=$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")
-    git pull origin $current_branch && git push origin $current_branch
+    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local push_branch=${2:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git pull origin $pull_branch && git push origin $push_branch
 }
+
 
 # check
 alias gs='git status'
