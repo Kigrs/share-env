@@ -189,6 +189,8 @@ alias grhd='git reset --hard' # reset completely & back to prev commit
 alias gm='git merge'
 ## revert
 alias grv='git revert'
+## cherry-pick
+alias gcp='git cherry-pick'
 
 # remote
 alias gf='git fetch'
