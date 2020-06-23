@@ -101,8 +101,14 @@ function ssha () {
     ssh-add $PRIVATE_KEY
 }
 alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
-alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh keisuke@rp4.local || ssh keisuke@kigrs.mydns.jp '
 
+function ssh-rp4 () {
+    local port user host
+    port=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f2)
+    user=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f3)
+    host=$([ -n "`arp -a | grep -F speedwifi-next.home `" ] && echo rp4.local || echo kigrs.mydns.jp)
+    ssha && ssh -p $port $user@$host
+}
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 
