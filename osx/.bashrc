@@ -138,6 +138,8 @@ alias g='git'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gba='git branch -a'
+### parents
+function gbp () { git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'; }
 ## rename
 alias gbm='git branch -m'
 ## delete
