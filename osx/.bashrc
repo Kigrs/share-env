@@ -96,6 +96,7 @@ export HSTR_CONFIG=hicolor       # get more colors
 function onetime () {
     local key_id secret_key code
     key_id=$(cat ~/.oauth | cut -d\  -f 1 | peco --select-1)
+    [ -z "$key_id" ] && return 0
     secret_key=$(grep $key_id ~/.oauth | cut -d\  -f 2)
     code=$(oathtool --totp --base32 $secret_key)
     [ -n "$code" ] && echo $code && echo $code | pbcopy
