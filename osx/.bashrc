@@ -93,6 +93,14 @@ alias stresstest='openssl speed -multi `getconf _NPROCESSORS_ONLN`'
 alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
+function onetime () {
+    local key_id secret_key code
+    key_id=$(cat ~/.oauth | cut -d\  -f 1 | peco --select-1)
+    secret_key=$(grep $key_id ~/.oauth | cut -d\  -f 2)
+    code=$(oathtool --totp --base32 $secret_key)
+    [ -n "$code" ] && echo $code && echo $code | pbcopy
+}
+
 function ssha () {
     local PRIVATE_KEY=${1-~/.ssh/private.pem}
     local FINGER_PRINT=$(ssh-keygen -lf $PRIVATE_KEY | cut -d\  -f2)
