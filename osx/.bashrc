@@ -93,6 +93,15 @@ alias stresstest='openssl speed -multi `getconf _NPROCESSORS_ONLN`'
 alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
+function onetime () {
+    local key_id secret_key code
+    key_id=$(cat ~/.oauth | cut -d\  -f 1 | peco --select-1)
+    [ -z "$key_id" ] && return 0
+    secret_key=$(grep $key_id ~/.oauth | cut -d\  -f 2)
+    code=$(oathtool --totp --base32 $secret_key)
+    [ -n "$code" ] && echo $code && echo $code | pbcopy
+}
+
 function ssha () {
     local PRIVATE_KEY=${1-~/.ssh/private.pem}
     local FINGER_PRINT=$(ssh-keygen -lf $PRIVATE_KEY | cut -d\  -f2)
@@ -101,8 +110,14 @@ function ssha () {
     ssh-add $PRIVATE_KEY
 }
 alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
-alias ssh-rp4='ssha && [ -n "`arp -a | grep -F speedwifi-next.home `" ] && ssh keisuke@rp4.local || ssh keisuke@kigrs.mydns.jp '
 
+function ssh-rp4 () {
+    local port user host
+    port=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f2)
+    user=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f3)
+    host=$([ -n "`arp -a | grep -F speedwifi-next.home `" ] && echo rp4.local || echo kigrs.mydns.jp)
+    ssha && ssh -p $port $user@$host
+}
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 
@@ -123,13 +138,23 @@ alias g='git'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gba='git branch -a'
+### parents
+function gbp () { git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'; }
 ## rename
 alias gbm='git branch -m'
 ## delete
-alias gbd='git branch -d'
-alias gbD='git branch -D'
-alias gbdr='git push -d origin' # delete remote branch
-function gbda () { git branch -d $1; git push -d origin $1; }
+function gbd () { read -p "Delete local branch? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git branch -d $1 || echo Deletion aborted.; }
+function gbD () { read -p "Delete local branch by FORCE? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git branch -D $1 || echo Deletion aborted.; }
+function gbdr () { read -p "Delete remote branch? [$1] (y/N): " yn; [[ $yn = [yY] ]] && git push -d origin $1 || echo Deletion aborted.; }
+function gbda () {
+read -p "Delete local & remote branch? [$1] (y/N): " yn
+if [[ $yn = [yY] ]]; then
+    git branch -d $1
+    git push -d origin $1
+else
+    echo Deletion aborted.
+fi
+}
 ## checkout
 alias gcom='git checkout master'
 function gco () {
@@ -140,7 +165,7 @@ function gco () {
     grep -v $current_branch | peco --select-1 | xargs git checkout
 }
 function gcob () {
-local branches=$(git branch)
+local branches=$(git branch | grep -v \*)
 [ -z "$branches" ] && return 1
 [ -z "$1" ] && echo "Select target branch." && return 1
 
@@ -181,23 +206,26 @@ alias grhd='git reset --hard' # reset completely & back to prev commit
 alias gm='git merge'
 ## revert
 alias grv='git revert'
+## cherry-pick
+alias gcp='git cherry-pick'
 
 # remote
 alias gf='git fetch'
 function gpl () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
-    git pull origin $current_branch
+    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git pull origin $pull_branch
 }
 alias gplm='git pull origin master'
 
 function gps () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
-    git push origin $current_branch
+    local push_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git push origin $push_branch
 }
 
 function gpp () {
-    local current_branch=$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")
-    git pull origin $current_branch && git push origin $current_branch
+    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local push_branch=${2:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    git pull origin $pull_branch && git push origin $push_branch
 }
 
 # check
