@@ -115,7 +115,7 @@ function ssh-rp4 () {
     local port user host
     port=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f2)
     user=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f3)
-    host=$([ -n "`arp -a | grep -F speedwifi-next.home `" ] && echo rp4.local || echo kigrs.mydns.jp)
+    host=$([ -n "`arp -a | grep -F aterm.me `" ] && echo rp4.local || echo kigrs.mydns.jp)
     ssha && ssh -p $port $user@$host
 }
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
