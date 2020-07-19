@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>95174EFF-4B6F-4AA7-968F-0EF31483B480</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A92501C5-A5C6-425B-8A6E-1C18C3173C12</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A92501C5-A5C6-425B-8A6E-1C18C3173C12</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Keisuke Igarashi</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SimpleFloatingClock Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>cl</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ "`ps aux | grep -v grep | grep SimpleFloatingClock`" ]; then
+	arg='stop'
+	title='Switch SFClock DOWN'
+	
+else
+	arg='start'
+	title='Switch SFClock UP'
+	
+fi
+
+echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;&lt;item uid='fbtt' arg='$arg' valid='yes'&gt;&lt;title&gt;$title&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;/item&gt;&lt;/items&gt;"
+
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Toggle clock up/down</string>
+				<key>title</key>
+				<string>SFClock toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>95174EFF-4B6F-4AA7-968F-0EF31483B480</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="{query}"
+
+if [[ $query == 'stop' ]]; then
+	pkill SimpleFloatingClock
+else
+	open -a "$HOME/share-env/osx/Applications/Simple Floating Clock/SimpleFloatingClock.app"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A92501C5-A5C6-425B-8A6E-1C18C3173C12</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>95174EFF-4B6F-4AA7-968F-0EF31483B480</key>
+		<dict>
+			<key>xpos</key>
+			<integer>90</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>A92501C5-A5C6-425B-8A6E-1C18C3173C12</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
