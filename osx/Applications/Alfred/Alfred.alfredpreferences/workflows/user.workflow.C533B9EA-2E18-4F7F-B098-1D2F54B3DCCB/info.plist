@@ -130,16 +130,16 @@ fi</string>
 		<key>95174EFF-4B6F-4AA7-968F-0EF31483B480</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>80</integer>
 		</dict>
 		<key>A92501C5-A5C6-425B-8A6E-1C18C3173C12</key>
 		<dict>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>80</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

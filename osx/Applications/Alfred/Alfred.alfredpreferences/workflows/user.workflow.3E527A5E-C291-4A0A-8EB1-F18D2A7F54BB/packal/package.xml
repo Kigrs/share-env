@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>TickTick</name>
-  <version>1.0</version>
-  <bundle>com.carlmercier.alfred-ticktick</bundle>
-  <updated>1549213347</updated>
-  <file>add_to_ticktick.alfredworkflow</file>
-</workflow>
