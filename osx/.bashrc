@@ -51,6 +51,14 @@ alias ta='tree -CaN -I ".git"'
 alias hi='history | tail'
 alias his='history'
 alias hg='history | grep'
+function hgt () {
+    if [ -z "$1" ]; then
+        history | tail
+    else
+        history | grep $1 | tail
+    fi
+}
+
 alias mem='top -o rsize'
 alias cpu='top -o cpu'
 
@@ -301,9 +309,28 @@ function cdh () {
 function cdg () {
     local GIT_REPOS="$(ghq root)/$(ghq list | peco)"
     [ "$GIT_REPOS" = "$(ghq root)/" ] || cd $GIT_REPOS
+    return 0
 }
 
-alias cdp='cd $(ls -lA | grep "^d" | tr -s " " | cut -d " " -f 9 | peco --select-1)'
+function cdp () {
+    local target
+    while :; do
+        target=$(ls -lA | grep "^d" | tr -s " " | cut -d " " -f 9 | peco)
+        [ -n "$target" ] && cd $target || break
+    done
+    return 0
+}
+
+function cdz () {
+    local target
+    if [ -z "$1" ]; then
+        target=$(fzf --select-1 --exit-0)
+    else
+        target=$(fzf --select-1 --exit-0 --query="$1")
+    fi
+    [ -n "$target" ] && cd $(dirname $target)
+    return 0
+}
 
 function line() { printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"; }
 
