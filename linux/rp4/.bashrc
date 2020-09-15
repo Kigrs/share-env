@@ -3,7 +3,12 @@
 [ -z "`declare -F | grep _ps1_status`" ] && . ~/.bash_profile && return 0
 
 alias a='alias'
-alias def='declare -f'
+function def () {
+    [ "$#" -eq 0 ] && alias && declare -f && return 0
+    for func in "$@"; do
+        declare -f $func 2>/dev/null || alias $func 2>/dev/null || echo "$func: command not found."
+    done
+}
 alias lscmd='echo $PATH | tr : \\n | awk '\''!a[$0]++'\'' | xargs -I@ find @ -perm +111 -maxdepth 1 2>/dev/null'
 
 alias p='pwd'
