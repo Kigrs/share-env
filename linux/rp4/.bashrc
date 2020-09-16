@@ -6,7 +6,7 @@ alias a='alias'
 function def () {
     [ "$#" -eq 0 ] && alias && declare -f && return 0
     for func in "$@"; do
-        declare -f $func 2>/dev/null || alias $func 2>/dev/null || echo "$func: command not found."
+        declare -f $func 2>/dev/null || alias $func 2>/dev/null || echo "$func: neither alias nor function are found."
     done
 }
 alias lscmd='echo $PATH | tr : \\n | awk '\''!a[$0]++'\'' | xargs -I@ find @ -perm +111 -maxdepth 1 2>/dev/null'
