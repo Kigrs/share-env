@@ -56,6 +56,14 @@ alias ta='tree -CaN -I ".git"'
 alias hi='history | tail'
 alias his='history'
 alias hg='history | grep'
+function hgt () {
+    if [ -z "$1" ]; then
+        history | tail
+    else
+        history | grep $1 | tail
+    fi
+}
+
 alias mem='top -o rsize'
 alias cpu='top -o cpu'
 
