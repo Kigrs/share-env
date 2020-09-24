@@ -318,10 +318,12 @@ function cdg () {
 }
 
 function cdp () {
-    local target
+    local target files
     while :; do
-        target=$(ls -lA | grep "^d" | tr -s " " | cut -d " " -f 9 | peco)
-        [ -n "$target" ] && cd $target || break
+        files="files: $(ls -F | grep -v / | tr '\n' ',' | sed 's/,/, /g')"
+        target=$(ls -F | grep / | gsed -e "1i$files" -e "1i$(line =)" | peco --prompt ">$(pwd)/" --initial-index 2)
+        #[ -d "$target" ] && pwd && ls -A && echo && cd $target || break
+        [ -d "$target" ] && cd $target || break
     done
     return 0
 }
