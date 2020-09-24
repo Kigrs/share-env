@@ -211,19 +211,19 @@ alias gcp='git cherry-pick'
 # remote
 alias gf='git fetch'
 function gpl () {
-    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local pull_branch=${1:-$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")}
     git pull origin $pull_branch
 }
 alias gplm='git pull origin master'
 
 function gps () {
-    local push_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local push_branch=${1:-$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")}
     git push origin $push_branch
 }
 
 function gpp () {
-    local pull_branch=${1:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
-    local push_branch=${2:-$(echo $(__git_ps1) | gsed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local pull_branch=${1:-$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")}
+    local push_branch=${2:-$(echo $(__git_ps1) | sed -r "s/^\(([^ ]+).*\)$/\1/")}
     git pull origin $pull_branch && git push origin $push_branch
 }
 
