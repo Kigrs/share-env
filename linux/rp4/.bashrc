@@ -314,7 +314,7 @@ function cdp () {
                      <(echo '../') |\
                      peco --prompt "$(pwd)/" --initial-index 1)
         [ -z "$target" ] && break 
-        [ -d "$target" ] && cd $target
+        [ -d "$target" ] && cd "$target"
     done
     return 0
 }
