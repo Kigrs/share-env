@@ -339,7 +339,7 @@ function cdz () {
     else
         target=$(fzf --select-1 --exit-0 --query="$1")
     fi
-    [ -n "$target" ] && cd $(dirname $target)
+    [ -n "$target" ] && cd "$(dirname "$target")"
     return 0
 }
 
