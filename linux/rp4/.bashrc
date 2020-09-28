@@ -67,10 +67,8 @@ function hg () {
     fi
 }
 function hgz () {
-    local command=$(hg --plain "$1" | fzf --tac --ansi)
     local date_format='\ *[0-9]+\ +[0-9\/:]+'
-    #[ -n "$command" ] && echo "$command" | sed -r "s/$date_format\ //" | tr -d "\n" | pbcopy && echo "$command" | sed -r "s/^($date_format)(.*)/\x1b[37m\1\x1b[0m\2/g"
-    [ -n "$command" ] && echo "$command" | sed -r "s/$date_format\ //" | tr -d "\n" | pbcopy && echo "$command" | sed -r "s/^($date_format)(.*)/\x1b[37mCopied\ :\ \x1b[0m\2/g"
+    hg --plain "$1" | fzf --tac --ansi | sed -r "s/^($date_format)(.*)/\x1b[37m\1\x1b[0m\2/g"
     return 0
 }
 
