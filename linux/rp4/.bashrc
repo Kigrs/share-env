@@ -4,10 +4,13 @@
 
 alias a='alias'
 function def () {
-    [ "$#" -eq 0 ] && alias && declare -f && return 0
-    for func in "$@"; do
-        declare -f $func 2>/dev/null || alias $func 2>/dev/null || echo "$func: neither alias nor function are found."
-    done
+    function _search_command () {
+        [ "$#" -eq 0 ] && alias && declare -f && return 0
+        for func in "$@"; do
+            declare -f $func 2>/dev/null || alias $func 2>/dev/null || echo "$func: neither alias nor function are found."
+        done
+    }
+    _search_command $@ | bat -plain --paging auto -l sh
 }
 alias lscmd='echo $PATH | tr : \\n | awk '\''!a[$0]++'\'' | xargs -I@ find @ -perm +111 -maxdepth 1 2>/dev/null'
 
@@ -55,13 +58,20 @@ alias ta='tree -CaN -I ".git"'
 
 alias hi='history | tail'
 alias his='history'
-alias hg='history | grep'
-function hgt () {
-    if [ -z "$1" ]; then
-        history | tail
+function hg () {
+    local date_format='\ *[0-9]+\ +[0-9\/:]+'
+    if [ $# -eq 0 ]; then
+        grep
     else
-        history | grep $1 | tail
+        history | grep -E "^$date_format\ ${@:$#}" | sed -r "s/^($date_format)(.*)(${@:$#})(.*)/\x1b[37m\1\x1b[0m\2\x1b[4m\3\x1b[0m\4/g"
     fi
+}
+function hgz () {
+    local command=$(hg --plain "$1" | fzf --tac --ansi)
+    local date_format='\ *[0-9]+\ +[0-9\/:]+'
+    #[ -n "$command" ] && echo "$command" | sed -r "s/$date_format\ //" | tr -d "\n" | pbcopy && echo "$command" | sed -r "s/^($date_format)(.*)/\x1b[37m\1\x1b[0m\2/g"
+    [ -n "$command" ] && echo "$command" | sed -r "s/$date_format\ //" | tr -d "\n" | pbcopy && echo "$command" | sed -r "s/^($date_format)(.*)/\x1b[37mCopied\ :\ \x1b[0m\2/g"
+    return 0
 }
 
 alias mem='top -o rsize'
@@ -79,7 +89,7 @@ function v. () {
     [ -z "$file" ] && return 0
     lastmoddate=$(date -r $file)
     vim $file
-    [ "$lastmoddate" != "`date -r $file`" -a -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
+    [ "$lastmoddate" != "`date -r $file`" -a -n "`head -n 1 $file | grep '^#\!' | grep 'bash$'`" ] && read -n 1 -p "Execute \"source `basename $file`\" ?: " yn && if [[ $yn = [yY] ]]; then source $file ; fi
     return 0
 }
 
