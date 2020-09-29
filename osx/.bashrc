@@ -329,22 +329,17 @@ function cdg () {
 }
 
 function cdp () {
-    local target
-    local pre_dirctory pre_line
+    local target targets pre_directory pre_line
     while :; do
-        #target=$(cat <(line =) <(ls -AF | grep "\/" | grep -v "^\.") \
-        #             <(line) <(ls -AF | grep -v "\/" | grep -v "^\.") <(ls -AF | grep -v "\/" | grep "^\.") \
-        #             <(line =) <(ls -AF | grep -E "^\\..*/$") <(echo '../') |\
-        #             peco --prompt "$(pwd)/" --initial-index 1)
-        cat <(line =) <(ls -AF | grep "\/" | grep -v "^\.") \
-            <(line) <(ls -AF | grep -v "\/" | grep -v "^\.") <(ls -AF | grep -v "\/" | grep "^\.") \
-            <(line =) <(ls -AF | grep -E "^\\..*/$") <(echo '../') > ~/cdp_tmp
-        [ -n "$(grep -E "^$pre_dirctory$" ~/cdp_tmp)" ] && pre_line=$(($(grep -n -E "^$pre_dirctory$" ~/cdp_tmp | cut -d ":" -f 1) - 1)) || pre_line=1
-        target=$(cat ~/cdp_tmp | peco --prompt "$(pwd)/" --initial-index "$pre_line")
-            
+        targets=$(cat <(line =) <(ls -AF | grep "\/" | grep -v "^\.") \
+                      <(line) <(ls -AF | grep -v "\/" | grep -v "^\.") <(ls -AF | grep -v "\/" | grep "^\.") \
+                      <(line =) <(ls -AF | grep -E "^\\..*/$") <(echo '../'))
+
+        [ "$target" = "../" ] && pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
+        target=$(echo "$targets" | peco --prompt "$(pwd)/" --initial-index "$pre_line")
+
         [ -z "$target" ] && break
-        #[ -d "$target" ] && cd "$target"
-        [ -d "$target" ] && pre_dirctory="$(basename "$(pwd)")/" && cd "$target"
+        [ -d "$target" ] && pre_directory="$(basename "$(pwd)")/" && cd "$target"
     done
     return 0
 }
