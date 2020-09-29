@@ -27,6 +27,7 @@ alias ......='cd ../../../../..'
 
 alias ls='ls -G'
 alias ll='ls -lhG'
+alias l='ll'
 alias la='ls -aG'
 alias lla='ls -lahG'
 
@@ -330,13 +331,11 @@ function cdg () {
 function cdp () {
     local target
     while :; do
-        target=$(cat <(line =) \
-                     <(ls -aF | grep -E ^[a-zA-Z0-9].*/$) \
-                     <(line) <(ls -F | grep -v /) \
-                     <(line =) <(ls -AF | grep -E ^\\..*/$) \
-                     <(echo '../') |\
+        target=$(cat <(line =) <(ls -AF | grep "\/" | grep -v "^\.") \
+                     <(line) <(ls -AF | grep -v "\/" | grep -v "^\.") <(ls -AF | grep -v "\/" | grep "^\.") \
+                     <(line =) <(ls -AF | grep -E "^\\..*/$") <(echo '../') |\
                      peco --prompt "$(pwd)/" --initial-index 1)
-        [ -z "$target" ] && break 
+        [ -z "$target" ] && break
         [ -d "$target" ] && cd "$target"
     done
     return 0
