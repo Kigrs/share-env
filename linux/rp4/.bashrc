@@ -318,17 +318,26 @@ function cdp () {
     while :; do
         targets=$(cat <(line =) <(ls -AF | grep "\/" | grep -v "^\.") \
                       <(line) <(ls -AF | grep -v "\/" | grep -v "^\.") <(ls -AF | grep -v "\/" | grep "^\.") \
-                      <(line =) <(ls -AF | grep -E "^\\..*/$") <(echo '../'))
+                      <(line) <(ls -AF | grep -E "^\\..*/$") \
+                      <(line =) <(echo -e "/\n$HOME\n../../../\n../../\n../"))
 
-        [ "$target" = "../" ] && pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
+        [[ "$target" =~ ^../ ]] || [[ -f "$target" ]] && pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
         target=$(echo "$targets" | peco --prompt "$(pwd)/" --initial-index "$pre_line")
 
         [ -z "$target" ] && break
-        [ -d "$target" ] && pre_directory="$(basename "$(pwd)")/" && cd "$target"
+        [ -f "$target" ] && pre_directory="$target" && vim "$target"
+        if [ -d "$target" ]; then
+            case "$target" in
+                ../* )
+                    pre_directory="$(pwd | rev | cut -d \/ -f $(echo -n "$target" | sed 's/\.\.\//x/g' | wc -m) | rev)"
+                    pre_directory=${pre_directory:="$(pwd | cut -d \/ -f 2)"}
+                    cd "$target" ;;
+                * ) cd "$target" ;;
+            esac
+        fi
     done
     return 0
 }
-
 
 function cdz () {
     local target
