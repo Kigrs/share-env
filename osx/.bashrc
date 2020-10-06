@@ -336,19 +336,18 @@ function cdp () {
                       <(line) <(ls -AF | grep -E "^\\..*/$") \
                       <(line =) <(echo -e "/\n$HOME\n../../../\n../../\n../"))
 
-        [[ "$target" =~ ^../ ]] || [[ -f "$target" ]] && pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
+        [[ "$target" =~ ^../ ]] || [[ -f "$target" ]] && \
+            pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
         target=$(echo "$targets" | peco --prompt "$(pwd)/" --initial-index "$pre_line")
 
         [ -z "$target" ] && break
         [ -f "$target" ] && pre_directory="$target" && vim "$target"
         if [ -d "$target" ]; then
-            case "$target" in
-                ../* )
-                    pre_directory="$(pwd | rev | cut -d \/ -f $(echo -n "$target" | gsed 's/\.\.\//x/g' | wc -m) | rev)"
-                    pre_directory=${pre_directory:="$(pwd | cut -d \/ -f 2)"}
-                    cd "$target" ;;
-                * ) cd "$target" ;;
-            esac
+            [[ "$target" =~ ^../ ]] && \
+                pre_directory="$(pwd | rev | cut -d \/ -f $(echo -n "$target" | gsed 's/\.\.\//x/g' | wc -m) | rev)" && \
+                pre_directory=${pre_directory:="$(pwd | cut -d \/ -f 2)"}
+            cd "$target"
+            _pwd_status
         fi
     done
     return 0
