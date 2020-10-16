@@ -14,8 +14,7 @@ function def () {
 }
 alias lscmd='echo $PATH | tr : \\n | awk '\''!a[$0]++'\'' | xargs -I@ find @ -perm +111 -maxdepth 1 2>/dev/null'
 
-alias p='pwd'
-alias pc='pwd | tr -d "\n" | pbcopy'
+alias p='pwd && pwd | tr -d "\n" | pbcopy'
 
 alias d='cd ~/Desktop'
 alias h='cd ~'

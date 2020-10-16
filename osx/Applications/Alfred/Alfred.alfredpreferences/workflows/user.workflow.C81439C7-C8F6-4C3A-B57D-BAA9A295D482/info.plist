@@ -739,7 +739,7 @@ echo -n $trans</string>
 				<key>hotkey</key>
 				<integer>38</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>655360</integer>
 				<key>hotstring</key>
 				<string>J</string>
 				<key>leftcursor</key>
@@ -976,7 +976,7 @@ echo -n ${DATETIME}</string>
 				<key>hotkey</key>
 				<integer>14</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>655360</integer>
 				<key>hotstring</key>
 				<string>E</string>
 				<key>leftcursor</key>
