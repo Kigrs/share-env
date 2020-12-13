@@ -66,6 +66,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 ## bat
 export BAT_THEME="Nord"
 
+## fzf
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border'
+
 # cdx command
 mkdir -p /tmp/PWD
 export TTY=$(basename $(tty))

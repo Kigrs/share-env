@@ -62,6 +62,13 @@ source `find / -name 'git-prompt.sh' 2>/dev/null`
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
+# 3rd Application
+## bat
+export BAT_THEME="Nord"
+
+## fzf
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border'
+
 # Alias & Functions
 [ -f ~/.bashrc ] && . ~/.bashrc
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
