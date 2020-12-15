@@ -337,7 +337,7 @@ function cdp () {
 
         [[ "$target" =~ ^../ ]] || [[ -f "$target" ]] && \
             pre_line=$(($(echo "$targets" | grep -n -F "$pre_directory" | awk 'NR==1 || length<len {len=length; line=$0} END {print line}' | cut -d ":" -f 1) - 1)) || pre_line=1
-        target=$(echo "$targets" | peco --prompt "$(pwd)/" --initial-index "$pre_line" | tr -d "\*")
+        target=$(echo "$targets" | peco --prompt "$(pwd)/" --initial-index "$pre_line" | tr -d "\*@")
 
         [ -z "$target" ] && break
         [ -f "$target" ] && pre_directory="$target" && vim "$target"
