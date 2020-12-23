@@ -24,8 +24,9 @@ alias c='clear'
 alias m='mkdir'
 alias o='open'
 alias f='open .'
-alias t='tree -CN'
-alias ta='tree -CaN -I ".git"'
+
+function tree () { echo ./$1; find ./$1 2>/dev/null | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'; }
+alias t='tree'
 
 alias hi='history | tail'
 alias his='history'
