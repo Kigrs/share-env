@@ -294,6 +294,8 @@ alias ghpv='gh pr list --state open | peco --select-1 | cut -f1 | xargs -I {} gh
 
 function srch () { grep -E $1 -rl $2; }
 
+alias effective-grep='grep -v -e "^\s*#" -e "^\s*$"'
+
 function cdf () {
 local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
 if [ "$target" != "" ]

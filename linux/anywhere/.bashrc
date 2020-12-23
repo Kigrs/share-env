@@ -169,6 +169,8 @@ alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x
 
 function srch () { grep -E $1 -rl $2; }
 
+alias effective-grep='grep -v -e "^\s*#" -e "^\s*$"'
+
 function line() { printf '%*s\n' "${2:-$(tput cols)}" '' | tr ' ' "${1:--}"; }
 
 function lscat ()  {
