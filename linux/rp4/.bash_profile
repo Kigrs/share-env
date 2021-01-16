@@ -14,6 +14,7 @@ export PATH=/usr/local/bin:$PATH
 #export PATH=~/Library/Python/3.7/lib/python/site-packages:$PATH
 #export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/lib/postgresql/11/bin:$PATH
 
 # Prompt
 export PROMPT_COMMAND='history -a; history -c; history -r ; _ps1_status;'
@@ -71,6 +72,10 @@ export BAT_THEME="Nord"
 # cdx command
 mkdir -p /tmp/PWD
 export TTY=$(basename $(tty))
+
+# PostgreSQL
+export LD_LIBRARY_PATH=/usr/lib/postgresql/11/lib:$LD_LIBRARY_PATH
+export PGDATA=~/postgres/data
 
 # Alias & Functions
 [ -f ~/.bashrc ] && . ~/.bashrc
