@@ -292,6 +292,8 @@ alias ghpv='gh pr list --state open | peco --select-1 | cut -f1 | xargs -I {} gh
 # ex) ghiv [-p]  -  It can be shown in console with [-p] option.
 ###########################################################################################################################################################
 
+function cb () { echo -n "${@}" | pbcopy; }
+
 function srch () { grep -E $1 -rl $2; }
 
 alias effective-grep='grep -v -e "^\s*#" -e "^\s*$"'
