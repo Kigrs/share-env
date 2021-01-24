@@ -1821,6 +1821,61 @@
                     "type": "basic"
                 }
             ]
+        },
+        {
+            "description": "Only Command+Enter to POST (on Line & Discord)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "return_or_enter"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^jp\\.naver\\.line\\.mac$",
+                                "^com\\.hnc\\.Discord$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "return_or_enter",
+                        "modifiers": [
+                            "left_shift"
+                        ]
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^jp\\.naver\\.line\\.mac$",
+                                "^com\\.hnc\\.Discord$"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         }
     ]
 }
