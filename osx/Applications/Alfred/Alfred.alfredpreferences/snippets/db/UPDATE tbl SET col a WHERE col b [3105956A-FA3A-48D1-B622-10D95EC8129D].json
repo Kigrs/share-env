@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "UPDATE tbl SET col = 'a' WHERE col = 'b';",
+    "dontautoexpand" : true,
+    "uid" : "3105956A-FA3A-48D1-B622-10D95EC8129D",
+    "name" : "UPDATE tbl SET col = 'a' WHERE col = 'b';",
+    "keyword" : "UPDATE tbl SET col = 'a' WHERE col = 'b';"
+  }
+}

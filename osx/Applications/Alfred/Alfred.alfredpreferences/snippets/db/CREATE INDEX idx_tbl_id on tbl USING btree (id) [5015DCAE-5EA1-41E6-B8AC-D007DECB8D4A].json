@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "CREATE INDEX idx_tbl_id on tbl USING btree (id);",
+    "dontautoexpand" : true,
+    "uid" : "5015DCAE-5EA1-41E6-B8AC-D007DECB8D4A",
+    "name" : "CREATE INDEX idx_tbl_id on tbl USING btree (id);",
+    "keyword" : "CREATE INDEX idx_tbl_id on tbl USING btree (id);"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ADD TABLE tbl ADD COLUMN col_a INT;",
+    "dontautoexpand" : true,
+    "uid" : "811BEA7A-3C16-4577-A545-7682A343F57F",
+    "name" : "ADD TABLE tbl ADD COLUMN col_a INT;",
+    "keyword" : "ADD TABLE tbl ADD COLUMN col_a INT;"
+  }
+}

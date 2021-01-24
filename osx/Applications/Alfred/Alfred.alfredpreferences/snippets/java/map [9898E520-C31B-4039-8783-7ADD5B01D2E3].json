@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "Map<String, String> map = new HashMap<>();",
+    "dontautoexpand" : true,
+    "uid" : "9898E520-C31B-4039-8783-7ADD5B01D2E3",
+    "name" : "map",
+    "keyword" : "map"
+  }
+}

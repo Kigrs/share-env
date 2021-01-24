@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "TRUNCATE TABLE tbl;",
+    "dontautoexpand" : true,
+    "uid" : "E4B477A7-9B19-44B0-BCA5-2DC1C81E1ECF",
+    "name" : "TRUNCATE TABLE tbl;",
+    "keyword" : "TRUNCATE TABLE tbl;"
+  }
+}

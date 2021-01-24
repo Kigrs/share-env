@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "INSERT INTO tbl (col) VALUES ('a');",
+    "dontautoexpand" : true,
+    "uid" : "FEF465BD-4850-48F7-9EFA-58656DED89AF",
+    "name" : "INSERT INTO tbl (col) VALUES ('a');",
+    "keyword" : "INSERT INTO tbl (col) VALUES ('a');"
+  }
+}

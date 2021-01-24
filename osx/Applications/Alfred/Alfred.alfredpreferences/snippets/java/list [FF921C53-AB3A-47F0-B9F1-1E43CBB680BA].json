@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "List<Entry> list = new ArrayList<>();",
+    "dontautoexpand" : true,
+    "uid" : "FF921C53-AB3A-47F0-B9F1-1E43CBB680BA",
+    "name" : "list",
+    "keyword" : "list"
+  }
+}

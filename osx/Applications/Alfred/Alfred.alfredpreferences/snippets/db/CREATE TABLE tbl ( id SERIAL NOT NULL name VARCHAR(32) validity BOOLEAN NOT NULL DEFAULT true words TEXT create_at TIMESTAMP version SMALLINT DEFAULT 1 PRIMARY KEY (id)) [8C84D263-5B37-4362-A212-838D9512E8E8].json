@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "CREATE TABLE tbl (\n    id SERIAL NOT NULL,\n    name VARCHAR(32),\n    validity BOOLEAN NOT NULL DEFAULT true,\n    words TEXT,\n    create_at TIMESTAMP,\n    version SMALLINT DEFAULT 1,\n    PRIMARY KEY (id)\n);",
+    "dontautoexpand" : true,
+    "uid" : "8C84D263-5B37-4362-A212-838D9512E8E8",
+    "name" : "CREATE TABLE tbl ( id SERIAL NOT NULL, name VARCHAR(32), validity BOOLEAN NOT NULL DEFAULT true, words TEXT, create_at TIMESTAMP, version SMALLINT DEFAULT 1, PRIMARY KEY (id));",
+    "keyword" : "CREATE TABLE tbl ( id SERIAL NOT NULL, name VARCHAR(32), validity BOOLEAN NOT NULL DEFAULT true, words TEXT, create_at TIMESTAMP, version SMALLINT DEFAULT 1, PRIMARY KEY (id));"
+  }
+}

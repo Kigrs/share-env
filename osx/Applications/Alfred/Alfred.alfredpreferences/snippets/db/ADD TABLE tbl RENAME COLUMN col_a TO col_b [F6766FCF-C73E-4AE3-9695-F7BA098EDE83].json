@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ADD TABLE tbl RENAME COLUMN col_a TO col_b;",
+    "dontautoexpand" : true,
+    "uid" : "F6766FCF-C73E-4AE3-9695-F7BA098EDE83",
+    "name" : "ADD TABLE tbl RENAME COLUMN col_a TO col_b;",
+    "keyword" : "ADD TABLE tbl RENAME COLUMN col_a TO col_b;"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import os\nimport time\nfrom concurrent import futures\n\nPAIR = [(9201830,1523620),\n        (6104620,1432520),\n        (4104620,8432520),\n        (9104620,5432520),\n        (1012230,1736130),\n        (2725200,2727320),\n        (1122300,3904970)]\n\nPOOL_SIZE = None\n\ndef gcb(pair):\n    print(f'computing pair:{pair}')\n    a,b = pair\n    low = min(a,b)\n    for i in range(low, 0, -1):\n        if a % i == 0 and b % i == 0:\n            return f'result:{pair}->{i}'\n\ndef main():\n    print(f'POOL_SIZE:{POOL_SIZE}')\n    with futures.ProcessPoolExecutor(POOL_SIZE) as executor:\n        results = executor.map(gcb, PAIR)\n        print(type(results))\n        print(results)\n\n        for result in results:\n            print(result)\n\nif __name__ == \"__main__\":\n    start = time.time()\n    main()\n    print(f'Took {time.time()-start} seconds')\n",
+    "dontautoexpand" : true,
+    "uid" : "2F3E31BD-06AF-4362-8209-47A916ABCDED",
+    "name" : "process_pool_executor",
+    "keyword" : "process_pool_executor"
+  }
+}

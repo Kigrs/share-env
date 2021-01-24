@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "GRANT select, update, insert, delete ON tbl TO PUBLIC;",
+    "dontautoexpand" : true,
+    "uid" : "96587931-A1BF-4000-B3D4-7ABEA287E4CB",
+    "name" : "GRANT select, update, insert, delete ON tbl TO PUBLIC;",
+    "keyword" : "GRANT select, update, insert, delete ON tbl TO PUBLIC;"
+  }
+}

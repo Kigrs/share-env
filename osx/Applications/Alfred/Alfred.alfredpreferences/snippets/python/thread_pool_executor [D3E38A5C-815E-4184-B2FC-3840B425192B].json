@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import os\nimport time\nfrom concurrent import futures\n\nimport requests\n\nPLACES = ['tokyo','kyoto','nagoya','osaka','hokkaido','fukuoka','okinawa','yamagata','gifu','saitama','kanagawa','chiba','ehime','kagoshima','tottori','oita','kumamoto','yamaguchi','toyama','ishikawa','tochigi']\n\nPOOL_SIZE = None # DEFAULT = 5*os.cpu_count()\n\nSEARCH_URL='https:\/\/www.google.com\/search?q={}'\n\ndef search(place):\n    print(f'{PLACES.index(place)+1} {place} searching..')\n    res_msg = requests.get(SEARCH_URL.format(place))\n    return f'{PLACES.index(place)+1} {place}:{res_msg}'\n\ndef main():\n    print(f'POOL_SIZE:{POOL_SIZE}')\n    with futures.ThreadPoolExecutor(POOL_SIZE) as executor:\n        results = executor.map(search, PLACES)\n        print(type(results))\n        print(results)\n\n        for result in results:\n            print(result)\n\nif __name__ == \"__main__\":\n    start = time.time()\n    main()\n    print(f'Took {time.time()-start} seconds')\n",
+    "dontautoexpand" : true,
+    "uid" : "D3E38A5C-815E-4184-B2FC-3840B425192B",
+    "name" : "thread_pool_executor",
+    "keyword" : "thread_pool_executor"
+  }
+}

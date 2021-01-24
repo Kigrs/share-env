@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "DROP TABLE IF EXISTS tbl;",
+    "dontautoexpand" : true,
+    "uid" : "F5989024-8219-4365-9E9E-529B34E72345",
+    "name" : "DROP TABLE IF EXISTS tbl;",
+    "keyword" : "DROP TABLE IF EXISTS tbl;"
+  }
+}

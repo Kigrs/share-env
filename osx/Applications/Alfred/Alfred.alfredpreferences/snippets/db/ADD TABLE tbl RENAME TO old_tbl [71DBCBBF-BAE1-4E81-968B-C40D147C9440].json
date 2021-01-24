@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ADD TABLE tbl RENAME TO old_tbl;",
+    "dontautoexpand" : true,
+    "uid" : "71DBCBBF-BAE1-4E81-968B-C40D147C9440",
+    "name" : "ADD TABLE tbl RENAME TO old_tbl;",
+    "keyword" : "ADD TABLE tbl RENAME TO old_tbl;"
+  }
+}

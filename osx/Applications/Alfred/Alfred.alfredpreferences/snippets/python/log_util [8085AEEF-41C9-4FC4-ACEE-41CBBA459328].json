@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import os\nimport logging\nimport uuid\n\nimport logging\n\n# Const: Log format\n#LOG_FORMAT = '%(asctime)s.%(msecs)03d+00:00 [{uuid}] : [%(levelname)s] %(message)s'\n#LOG_FORMAT = '%(asctime)s.%(msecs)03d [{uuid}] : [%(levelname)s] %(message)s'\n#LOG_FORMAT = '%(asctime)s.%(msecs)03d[{uuid}]\\t[%(levelname)s]\\t%(module)s.%(funcName)s\\t%(message)s'\nLOG_FORMAT = '%(asctime)s.%(msecs)03d[{uuid}] : [%(levelname)s] %(message)s (%(funcName)s)'\nLOG_DATEFORMAT = '%m\/%d %H:%M:%S'\nLOG_LEVEL = logging.DEBUG\n\nclass Logger:\n\t\n\tdef __init__(self, log_level=LOG_LEVEL):\n\t\t\n\t\t# init logger\n\t\tlogformat = LOG_FORMAT.format(uuid=str(uuid.uuid4())[:6])\n\t\t\n\t\tlogging.basicConfig(level=log_level, format=logformat, datefmt=LOG_DATEFORMAT)\n\t\t\n\t\tself.logger = logging.getLogger()\n",
+    "dontautoexpand" : true,
+    "uid" : "8085AEEF-41C9-4FC4-ACEE-41CBBA459328",
+    "name" : "log_util",
+    "keyword" : "log_util"
+  }
+}

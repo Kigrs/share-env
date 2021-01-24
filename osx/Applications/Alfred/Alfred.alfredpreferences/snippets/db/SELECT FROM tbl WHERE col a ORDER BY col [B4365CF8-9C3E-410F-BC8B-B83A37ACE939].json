@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl WHERE col = 'a' ORDER BY col;",
+    "dontautoexpand" : true,
+    "uid" : "B4365CF8-9C3E-410F-BC8B-B83A37ACE939",
+    "name" : "SELECT * FROM tbl WHERE col = 'a' ORDER BY col;",
+    "keyword" : "SELECT * FROM tbl WHERE col = 'a' ORDER BY col;"
+  }
+}

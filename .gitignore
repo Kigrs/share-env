@@ -8,6 +8,8 @@ automatic_backups
 # Alfred
 **/Alfred.alfredpreferences/workflows/**/tmp/
 display_login.log
+**/osx/Applications/Alfred/Alfred.alfredpreferences/snippets/profile/
 
 # Karabiner
 karabiner.json
+

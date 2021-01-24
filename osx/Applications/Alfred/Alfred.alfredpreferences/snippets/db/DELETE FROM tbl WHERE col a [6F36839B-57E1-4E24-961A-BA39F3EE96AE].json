@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "DELETE FROM tbl WHERE col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "6F36839B-57E1-4E24-961A-BA39F3EE96AE",
+    "name" : "DELETE FROM tbl WHERE col = 'a';",
+    "keyword" : "DELETE FROM tbl WHERE col = 'a';"
+  }
+}

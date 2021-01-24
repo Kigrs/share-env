@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "CREATE TABLE tbl_parent (date TIMESTAMP)\n    PARTITION BY RANGE (date);",
+    "dontautoexpand" : true,
+    "uid" : "01E4B6CB-C834-4C76-92F0-FC9AC817319F",
+    "name" : "CREATE TABLE tbl_parent (date TIMESTAMP) PARTITION BY RANGE (date);",
+    "keyword" : "CREATE TABLE tbl_parent (date TIMESTAMP) PARTITION BY RANGE (date);"
+  }
+}

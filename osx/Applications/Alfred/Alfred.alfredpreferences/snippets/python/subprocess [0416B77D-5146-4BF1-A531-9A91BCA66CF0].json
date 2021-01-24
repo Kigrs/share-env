@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import subprocess\n\np = subprocess.run(['pwd'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)\nprint(f'returncode:{p.returncode}\\nstdout:{p.stdout}\\nstderr:{p.stderr}')\n\n\ndef heavy_process(wl):\n    print(f'proc start\\t:{wl}')\n    p = subprocess.Popen(['sleep', str(wl)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n    print(p)\n    return p\n\nworkloads = [1,2,3,4,5]\njobs = []\nfor wl in workloads:\n    jobs.append(heavy_process(wl))\n\nprint('wait for subprocess')\n\nfor job in jobs:\n    job.communicate()\n    print(job)\n\nprint('Done!')\n",
+    "dontautoexpand" : true,
+    "uid" : "0416B77D-5146-4BF1-A531-9A91BCA66CF0",
+    "name" : "subprocess",
+    "keyword" : "subprocess"
+  }
+}

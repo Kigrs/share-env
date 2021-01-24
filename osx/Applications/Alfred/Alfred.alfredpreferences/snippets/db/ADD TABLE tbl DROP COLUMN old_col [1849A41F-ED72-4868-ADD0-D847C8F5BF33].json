@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ADD TABLE tbl DROP COLUMN old_col;",
+    "dontautoexpand" : true,
+    "uid" : "1849A41F-ED72-4868-ADD0-D847C8F5BF33",
+    "name" : "ADD TABLE tbl DROP COLUMN old_col;",
+    "keyword" : "ADD TABLE tbl DROP COLUMN old_col;"
+  }
+}

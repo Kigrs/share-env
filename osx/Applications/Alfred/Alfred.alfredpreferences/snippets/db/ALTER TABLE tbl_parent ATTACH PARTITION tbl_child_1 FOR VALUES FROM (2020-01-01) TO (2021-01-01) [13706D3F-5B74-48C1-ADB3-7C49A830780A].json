@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ALTER TABLE tbl_parent ATTACH PARTITION tbl_child_1 FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');",
+    "dontautoexpand" : true,
+    "uid" : "13706D3F-5B74-48C1-ADB3-7C49A830780A",
+    "name" : "ALTER TABLE tbl_parent ATTACH PARTITION tbl_child_1 FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');",
+    "keyword" : "ALTER TABLE tbl_parent ATTACH PARTITION tbl_child_1 FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');"
+  }
+}

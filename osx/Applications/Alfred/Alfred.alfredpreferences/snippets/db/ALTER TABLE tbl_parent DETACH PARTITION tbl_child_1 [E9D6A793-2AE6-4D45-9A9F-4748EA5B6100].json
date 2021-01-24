@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ALTER TABLE tbl_parent DETACH PARTITION tbl_child_1;",
+    "dontautoexpand" : true,
+    "uid" : "E9D6A793-2AE6-4D45-9A9F-4748EA5B6100",
+    "name" : "ALTER TABLE tbl_parent DETACH PARTITION tbl_child_1;",
+    "keyword" : "ALTER TABLE tbl_parent DETACH PARTITION tbl_child_1;"
+  }
+}

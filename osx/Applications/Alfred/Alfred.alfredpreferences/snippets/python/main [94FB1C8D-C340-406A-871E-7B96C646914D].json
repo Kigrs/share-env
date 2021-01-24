@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "def main():\n    print(\"Hello\")\n\nif __name__ == \"__main__\":\n    main()",
+    "dontautoexpand" : true,
+    "uid" : "94FB1C8D-C340-406A-871E-7B96C646914D",
+    "name" : "main",
+    "keyword" : "main"
+  }
+}

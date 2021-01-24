@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl_a NATURAL INNER JOIN tbl_b WHERE tbl_a.col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "431928CB-C07A-4C7D-B08C-F484D5E57606",
+    "name" : "SELECT * FROM tbl_a NATURAL INNER JOIN tbl_b WHERE tbl_a.col = 'a';",
+    "keyword" : "SELECT * FROM tbl_a NATURAL INNER JOIN tbl_b WHERE tbl_a.col = 'a';"
+  }
+}

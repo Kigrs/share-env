@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "CREATE TABLE tbl_child_1 PARTITION OF tbl_parent\n    FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');",
+    "dontautoexpand" : true,
+    "uid" : "35401698-4069-45F1-A790-213D4443E4C2",
+    "name" : "CREATE TABLE tbl_child_1 PARTITION OF tbl_parent FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');",
+    "keyword" : "CREATE TABLE tbl_child_1 PARTITION OF tbl_parent FOR VALUES FROM ('2020-01-01') TO ('2021-01-01');"
+  }
+}

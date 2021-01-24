@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl;",
+    "dontautoexpand" : true,
+    "uid" : "D39F6F73-1A7B-4782-855D-30B303605872",
+    "name" : "SELECT * FROM tbl;",
+    "keyword" : "SELECT * FROM tbl;"
+  }
+}

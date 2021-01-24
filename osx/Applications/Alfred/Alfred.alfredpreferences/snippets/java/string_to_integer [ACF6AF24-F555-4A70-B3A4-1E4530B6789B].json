@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "String s = \"1\";\nInteger int_a = Integer.valueOf(s);\nint int_b = Integer.parseInt(s);",
+    "dontautoexpand" : true,
+    "uid" : "ACF6AF24-F555-4A70-B3A4-1E4530B6789B",
+    "name" : "string_to_integer",
+    "keyword" : "string_to_integer"
+  }
+}

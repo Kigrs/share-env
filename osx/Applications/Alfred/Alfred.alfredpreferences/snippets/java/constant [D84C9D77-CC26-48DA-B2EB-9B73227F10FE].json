@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "private static final String XXX = \"\";",
+    "dontautoexpand" : true,
+    "uid" : "D84C9D77-CC26-48DA-B2EB-9B73227F10FE",
+    "name" : "constant",
+    "keyword" : "constant"
+  }
+}

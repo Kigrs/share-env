@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ADD TABLE tbl OWNER TO new_admin_user;",
+    "dontautoexpand" : true,
+    "uid" : "92BF9C60-F10F-4562-9799-7E060BD753C9",
+    "name" : "ADD TABLE tbl OWNER TO new_admin_user;",
+    "keyword" : "ADD TABLE tbl OWNER TO new_admin_user;"
+  }
+}

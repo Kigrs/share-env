@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl_a\n    UNION SELECT * FROM tbl_b\n    EXCEPT SELECT * FROM tbl_c\n    INTERSECT SELECT * FROM tbl_d;",
+    "dontautoexpand" : true,
+    "uid" : "CAD5B150-D666-4DE8-B146-E10398D0A41E",
+    "name" : "SELECT * FROM tbl_a UNION SELECT * FROM tbl_b EXCEPT SELECT * FROM tbl_c INTERSECT SELECT * FROM tbl_d;",
+    "keyword" : "SELECT * FROM tbl_a UNION SELECT * FROM tbl_b EXCEPT SELECT * FROM tbl_c INTERSECT SELECT * FROM tbl_d;"
+  }
+}

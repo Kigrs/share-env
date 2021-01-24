@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl_a NATURAL LEFT OUTER JOIN tbl_b WHERE tbl_a.col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "13999506-AAAB-4176-B292-1745D379B452",
+    "name" : "SELECT * FROM tbl_a NATURAL LEFT OUTER JOIN tbl_b WHERE tbl_a.col = 'a';",
+    "keyword" : "SELECT * FROM tbl_a NATURAL LEFT OUTER JOIN tbl_b WHERE tbl_a.col = 'a';"
+  }
+}

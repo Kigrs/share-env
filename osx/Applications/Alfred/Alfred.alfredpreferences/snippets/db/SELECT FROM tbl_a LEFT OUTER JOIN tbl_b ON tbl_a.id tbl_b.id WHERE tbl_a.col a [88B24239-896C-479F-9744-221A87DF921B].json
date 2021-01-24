@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl_a LEFT OUTER JOIN tbl_b ON tbl_a.id = tbl_b.id WHERE tbl_a.col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "88B24239-896C-479F-9744-221A87DF921B",
+    "name" : "SELECT * FROM tbl_a LEFT OUTER JOIN tbl_b ON tbl_a.id = tbl_b.id WHERE tbl_a.col = 'a';",
+    "keyword" : "SELECT * FROM tbl_a LEFT OUTER JOIN tbl_b ON tbl_a.id = tbl_b.id WHERE tbl_a.col = 'a';"
+  }
+}

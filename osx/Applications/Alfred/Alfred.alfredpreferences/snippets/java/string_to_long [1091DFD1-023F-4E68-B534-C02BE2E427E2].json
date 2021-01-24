@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "String s = \"1\";\nLong lon_a = Long.valueOf(s);\nlong lon_b = Long.parseLong(s);",
+    "dontautoexpand" : true,
+    "uid" : "1091DFD1-023F-4E68-B534-C02BE2E427E2",
+    "name" : "string_to_long",
+    "keyword" : "string_to_long"
+  }
+}

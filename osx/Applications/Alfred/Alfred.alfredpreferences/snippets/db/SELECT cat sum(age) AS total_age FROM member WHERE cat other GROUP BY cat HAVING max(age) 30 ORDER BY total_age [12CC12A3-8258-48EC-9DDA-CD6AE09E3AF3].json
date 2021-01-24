@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT cat, sum(age) AS total_age\n    FROM member\n    WHERE cat <> 'other'\n    GROUP BY cat\n    HAVING max(age) < 30\n    ORDER BY total_age;",
+    "dontautoexpand" : true,
+    "uid" : "12CC12A3-8258-48EC-9DDA-CD6AE09E3AF3",
+    "name" : "SELECT cat, sum(age) AS total_age FROM member WHERE cat <> 'other' GROUP BY cat HAVING max(age) < 30 ORDER BY total_age;",
+    "keyword" : "SELECT cat, sum(age) AS total_age FROM member WHERE cat <> 'other' GROUP BY cat HAVING max(age) < 30 ORDER BY total_age;"
+  }
+}

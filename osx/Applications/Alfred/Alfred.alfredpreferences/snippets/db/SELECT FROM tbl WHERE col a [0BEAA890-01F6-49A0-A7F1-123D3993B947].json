@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl WHERE col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "0BEAA890-01F6-49A0-A7F1-123D3993B947",
+    "name" : "SELECT * FROM tbl WHERE col = 'a';",
+    "keyword" : "SELECT * FROM tbl WHERE col = 'a';"
+  }
+}

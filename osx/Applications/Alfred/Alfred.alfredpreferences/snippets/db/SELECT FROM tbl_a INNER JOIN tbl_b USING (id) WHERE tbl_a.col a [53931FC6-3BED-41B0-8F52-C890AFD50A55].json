@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT * FROM tbl_a INNER JOIN tbl_b USING (id) WHERE tbl_a.col = 'a';",
+    "dontautoexpand" : true,
+    "uid" : "53931FC6-3BED-41B0-8F52-C890AFD50A55",
+    "name" : "SELECT * FROM tbl_a INNER JOIN tbl_b USING (id) WHERE tbl_a.col = 'a';",
+    "keyword" : "SELECT * FROM tbl_a INNER JOIN tbl_b USING (id) WHERE tbl_a.col = 'a';"
+  }
+}
