@@ -359,9 +359,9 @@ function cdp () {
 function cdz () {
     local target
     if [ -z "$1" ]; then
-        target=$(fzf --select-1 --exit-0)
+        target=$(fzf --select-1 --exit-0 --preview 'bat {}')
     else
-        target=$(fzf --select-1 --exit-0 --query="$1")
+        target=$(fzf --select-1 --exit-0 --query="$1" --preview 'bat {}')
     fi
     [ -n "$target" ] && cd "$(dirname "$target")"
     return 0
