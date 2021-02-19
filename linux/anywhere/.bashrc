@@ -45,6 +45,19 @@ alias cpu='top -o cpu'
 alias less='less -R'
 alias grep='grep --color=auto'
 
+function xsleep () {
+    read -t $1 < /dev/udp/0.0.0.0/80
+    return 0
+}
+
+function sh-escape() {
+  local s a=() q="'" qq='"'
+  for s in "$@"; do
+    a+=("'${s//$q/$q$qq$q$qq$q}'")
+  done
+  echo "${a[*]}"
+}
+
 # 3rd party
 alias v='vim'
 alias vr='vim -R'
