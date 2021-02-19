@@ -85,7 +85,7 @@ function xsleep () {
     return 0
 }
 
-function sh-escape() {
+function sh-escape () {
   local s a=() q="'" qq='"'
   for s in "$@"; do
     a+=("'${s//$q/$q$qq$q$qq$q}'")
