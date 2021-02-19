@@ -7,6 +7,7 @@ syntax match logWarn /WARNING/
 syntax match logError /ERROR/
 syntax match logError /SEVERE/
 
+" ref: http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 highlight logDebug ctermfg=8 guifg=#808080
 highlight logInfo ctermfg=15 guifg=#ffffff
 highlight logWarn ctermfg=228 guifg=#ffff87
