@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>6AC5DE33-A77D-4E00-9AB1-6D89EA8100F0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mc</string>
+			<key>text</key>
+			<string>Search Mercari for '{query}'</string>
+			<key>url</key>
+			<string>https://www.mercari.com/jp/search/?keyword={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
 </plist>

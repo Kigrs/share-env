@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "DROP TABLE IF EXISTS tbl;\n\nDROP TABLE IF EXISTS log;\n\n\nCREATE TABLE tbl (\n    name VARCHAR(32),\n    create_at TIMESTAMP DEFAULT current_timestamp\n);\n\nCREATE TABLE log (\n    create_at TIMESTAMP NOT NULL DEFAULT current_timestamp,\n    type INT NOT NULL,\n    tbl_name varchar(32) not null,\n    data JSONB\n);\n\nCREATE OR REPLACE FUNCTION insert_func() RETURNS TRIGGER AS\n$insert_func$\nBEGIN\n    IF (TG_OP = 'DELETE') THEN\n        INSERT INTO log (type, tbl_name, data) VALUES (3, TG_RELNAME, to_json(old));\n    ELSIF (TG_OP = 'UPDATE') THEN\n        INSERT INTO log (type, tbl_name, data) VALUES (2, TG_RELNAME, to_json(new));\n    ELSIF (TG_OP = 'INSERT') THEN\n        INSERT INTO log (type, tbl_name, data) VALUES (1, TG_RELNAME, to_json(new));\n    END IF;\n    RETURN NULL;\nEND;\n$insert_func$\nLANGUAGE plpgsql;\n\n\nCREATE TRIGGER trg_insert_log\n    AFTER INSERT OR UPDATE OR DELETE ON tbl\n    FOR EACH ROW EXECUTE FUNCTION insert_func();\n\n\nDROP TRIGGER trg_insert_log ON tbl CASCADE;\n\nDROP FUNCTION insert_func;\n",
+    "dontautoexpand" : true,
+    "uid" : "22AD1A37-3182-4495-8ABA-982EB9CE98FB",
+    "name" : "CREATE OR REPLACE FUNCTION insert_func() RETURNS TRIGGER AS",
+    "keyword" : "CREATE OR REPLACE FUNCTION insert_func() RETURNS TRIGGER AS"
+  }
+}

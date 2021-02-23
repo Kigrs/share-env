@@ -17,6 +17,8 @@
 	<string>;</string>
 	<key>snippetKeywordEnabled</key>
 	<false/>
+	<key>snippetMatchFields</key>
+	<integer>1</integer>
 	<key>snippetsAtTop</key>
 	<false/>
 </dict>
