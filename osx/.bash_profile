@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+LATEST_BASH=/usr/local/bin/bash
+
 # EDITOR
 export EDITOR='vim'
 export VISUAL='vim'
@@ -46,15 +49,17 @@ export HISTCONTROL=ignoreboth
 export HISTIGNORE='a:p:pwd:pc:hi:hh:his:history:ls:ll:la:lla:c:t:ta:gd:gs'
 
 # Bash option
-shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
-shopt -s dirspell
 shopt -s dotglob
 shopt -s extglob
-shopt -s globstar
 shopt -s histverify	
 shopt -u histappend
+if [ "`echo $SHELL`" = "$LATEST_BASH" ]; then
+    shopt -s autocd
+    shopt -s dirspell
+    shopt -s globstar
+fi
 
 # Git
 . ~/share-env/.git-prompt.sh
