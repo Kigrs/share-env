@@ -13,3 +13,7 @@ display_login.log
 # Karabiner
 karabiner.json
 
+# python
+__pycache__/
+*.py[cod]
+*$py.class

@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>autoExpandSnippetPlaySound</key>
+	<false/>
+	<key>autoExpandSnippetSound</key>
+	<string>Tink</string>
+	<key>autoExpandSnippetTriggerPlaySound</key>
+	<false/>
 	<key>clearKeywordEnabled</key>
 	<false/>
 	<key>hotkey</key>
@@ -13,6 +19,14 @@
 		<key>string</key>
 		<string>1</string>
 	</dict>
+	<key>limit</key>
+	<integer>3</integer>
+	<key>persistFor</key>
+	<integer>3</integer>
+	<key>persistForFiles</key>
+	<integer>1</integer>
+	<key>persistForImages</key>
+	<integer>1</integer>
 	<key>snippetKeyword</key>
 	<string>;</string>
 	<key>snippetKeywordEnabled</key>
@@ -20,6 +34,8 @@
 	<key>snippetMatchFields</key>
 	<integer>1</integer>
 	<key>snippetsAtTop</key>
+	<false/>
+	<key>snippetsWhenSearching</key>
 	<false/>
 </dict>
 </plist>

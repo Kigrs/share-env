@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "INSERT INTO {cursor} () VALUES ()",
+    "uid" : "2967E510-1F1C-43F9-8C38-5C502160640E",
+    "name" : "0 INSERT",
+    "keyword" : "in"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "UPDATE {cursor} SET  =  WHERE  =  ",
+    "uid" : "D17FC964-A881-4ECE-A9F0-964FE02D0EC4",
+    "name" : "0 UPDATE",
+    "keyword" : "up"
+  }
+}

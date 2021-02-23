@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{random:UUID}",
+    "uid" : "AEE36678-E6F7-4B73-8196-E891CB325D76",
+    "name" : "uuid",
+    "keyword" : "uuid"
+  }
+}
