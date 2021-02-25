@@ -1,6 +1,6 @@
 {
   "alfredsnippet" : {
-    "snippet" : "public class HelloWorld{\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"Hello World!\");\n\t}\n}",
+    "snippet" : "public class {cursor}{\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"Hello World!\");\n\t}\n}",
     "dontautoexpand" : true,
     "uid" : "3B967458-FBB3-42BC-8D3E-1636356C8A53",
     "name" : "hello_world",
