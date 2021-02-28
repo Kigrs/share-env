@@ -44,6 +44,8 @@ alias cpu='top -o cpu'
 alias less='less -R'
 alias grep='grep --color=auto'
 
+alias whereami='curl ifconfig.io'
+
 # 3rd party
 alias v='vim'
 alias vr='vim -R'

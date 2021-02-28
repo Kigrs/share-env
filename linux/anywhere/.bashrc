@@ -45,6 +45,8 @@ alias cpu='top -o cpu'
 alias less='less -R'
 alias grep='grep --color=auto'
 
+alias whereami='curl ifconfig.io'
+
 function xsleep () {
     read -t $1 < /dev/udp/0.0.0.0/80
     return 0
