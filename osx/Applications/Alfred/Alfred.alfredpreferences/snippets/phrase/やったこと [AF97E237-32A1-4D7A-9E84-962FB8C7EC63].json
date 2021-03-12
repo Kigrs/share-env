@@ -1,6 +1,6 @@
 {
   "alfredsnippet" : {
-    "snippet" : "#やったこと\n- {cursor}\n- ",
+    "snippet" : "#やったこと\n- ",
     "uid" : "AF97E237-32A1-4D7A-9E84-962FB8C7EC63",
     "name" : "やったこと",
     "keyword" : "yatta"
