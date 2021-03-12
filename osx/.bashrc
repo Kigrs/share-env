@@ -147,15 +147,16 @@ function ssha () {
     [ -z "$SSH_AGENT_PID" ] && eval `ssh-agent`
     ssh-add $PRIVATE_KEY
 }
+function sshx () {
+    local name host port user key config=~/.ssh/server
+    name=$(cut -d \  -f 1 $config | sed -e '1d' | fzf --select-1 --exit-0)
+    [ -z "$name" ] && return 0
+    IFS=\  read name host port user key <<< "$(grep $name $config)"
+    echo Host: $host
+    ssha ~/.ssh/$key && ssh -p $port $user@$host
+}
 alias ssh-ec2='ssha && ssh ec2-user@$(aws ec2 describe-instances --profile private | jq --raw-output ".Reservations[].Instances[].PublicDnsName")'
 
-function ssh-rp4 () {
-    local port user host
-    port=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f2)
-    user=$(cat ~/.ssh/server | grep rp4 | cut -d\  -f3)
-    host=$([ -n "`arp -a | grep -F aterm.me `" ] && echo rp4.local || echo kigrs.mydns.jp)
-    ssha && ssh -p $port $user@$host
-}
 alias subethaedit='open -a /Applications/SubEthaEdit.app'
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 

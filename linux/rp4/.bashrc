@@ -130,7 +130,6 @@ alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
 function ssha () {
-    # ssha [~/.ssh/private.pem]
     local PRIVATE_KEY=${1-~/.ssh/private.pem}
     local FINGER_PRINT=$(ssh-keygen -lf $PRIVATE_KEY | cut -d\  -f2)
     [[ -n "$SSH_AGENT_PID" && -n "$(ssh-add -l | grep $FINGER_PRINT)" ]] && echo -e "Agent pid $SSH_AGENT_PID" && return 0
