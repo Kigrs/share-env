@@ -52,14 +52,6 @@ function xsleep () {
     return 0
 }
 
-function sh-escape () {
-  local s a=() q="'" qq='"'
-  for s in "$@"; do
-    a+=("'${s//$q/$q$qq$q$qq$q}'")
-  done
-  echo "${a[*]}"
-}
-
 # 3rd party
 alias v='vim'
 alias vr='vim -R'
