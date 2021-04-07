@@ -27,6 +27,8 @@ alias f='open .'
 alias t='tree -CN'
 alias ta='tree -CaN -I ".git"'
 
+function count () { sort $1 | uniq -c |sort -nr; }
+
 alias hi='history | tail'
 alias his='history'
 alias hg='history | grep'

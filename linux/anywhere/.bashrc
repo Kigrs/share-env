@@ -28,6 +28,8 @@ alias f='open .'
 function tree () { echo ./$1; find ./$1 2>/dev/null | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'; }
 alias t='tree'
 
+function count () { sort $1 | uniq -c |sort -nr; }
+
 alias hi='history | tail'
 alias his='history'
 function hg () {
