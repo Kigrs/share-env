@@ -97,6 +97,20 @@ function sh-escape () {
   echo "${a[*]}"
 }
 
+function json () {
+    if [ -n "$1" ]; then echo "$1" | jq; return $?; fi
+    local tmpdir=/tmp/JSON/$(uuid) rawjson prettyjson lastdate
+    rawjson=$tmpdir/raw.json; prettyjson=$tmpdir/pretty.json;
+    mkdir -p $tmpdir
+    touch $rawjson
+    lastdate=$(date -r $rawjson)
+    vim $rawjson
+    [ "$lastdate" = "`date -r $rawjson`" ] && \rm -rf $tmpdir && return 0;
+    jq . $rawjson > $prettyjson || return 1
+    vim $prettyjson
+    \rm -rf $tmpdir
+}
+
 # 3rd party
 alias v='vim'
 alias vr='vim -R'
