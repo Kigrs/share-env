@@ -509,7 +509,7 @@ tag = 'other' if not tag in TAG_CATEGORY.keys() else TAG_CATEGORY[tag]
 print json.dumps({
     "variables":
     {
-        "startmsg": "" if not message else startmsg,
+        "startmsg": "Timer" if not message else message,
         "endmsg": compliment,
 		"tag": "" if not message else tag,
 		"seconds": str(seconds),
@@ -796,7 +796,7 @@ compliment = random.choice(("Good job!","You did it!","Well done!","Nice!","You 
 print json.dumps({
     "variables":
     {
-        "startmsg": "" if not message else message,
+        "startmsg": "Schedule" if not message else message,
         "endmsg": compliment,
 		"tag": "" if not message else re.split(' ', message)[0],
 		"seconds": str(seconds),
