@@ -79,9 +79,9 @@ mkdir -p /tmp/PWD
 export TTY=$(basename $(tty))
 
 # Alias & Functions
+[ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 [ -f ~/.bashrc ] && . ~/.bashrc
 [ -f ~/.aws/awscli.sh ] && . ~/.aws/awscli.sh
-[ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 
 # Command completion
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion

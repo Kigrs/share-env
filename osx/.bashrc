@@ -147,6 +147,24 @@ alias stresstest='openssl speed -multi `getconf _NPROCESSORS_ONLN`'
 alias hh='hstr'
 export HSTR_CONFIG=hicolor       # get more colors
 
+function imginfo() {
+    catimg $1 && sips --getProperty all $1;
+}
+
+function lsimg () {
+    local pic_ext=('jpg' 'jpeg' 'JPG' 'JPEG' 'jpe' 'jfif' 'pjpeg' 'pjp' 'png' 'gif' 'tiff' 'tif' 'webp' 'svg' 'svgz')
+    printf '%s\n' "${@:-./}" | while read dir; do
+        ls -F "$dir" | grep -v -E ".*\/" | grep -F '.' | while read file; do
+            extension=$(echo "$file" | rev | cut -d. -f 1 | rev)
+            if [ "$(printf '%s\n' "${pic_ext[@]}" | grep -E "^${extension}$")" ]; then
+                echo
+                ls -l "$dir""$file"
+                catimg "$dir""$file"
+            fi
+        done
+    done
+}
+
 function onetime () {
     local key_id secret_key code
     key_id=$(cat ~/.oauth | cut -d\  -f 1 | peco --select-1)
